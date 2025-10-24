@@ -21,7 +21,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // In main character mouvement, add a colision function to manage the damage of the ennemy
     /*
      * The function : 
-     * public void OnCollisionEnted2D(Collision2D collision){
+     * public void OnCollisionEntered2D(Collision2D collision){
      *  if(collision.collider.CompareTag("Enemy)){
      *      gameManagement.TakeDamage(0.5f);
      *  }
@@ -34,12 +34,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         healthPoint -= damage;
         if (healthPoint <= 0)
-        {
+        {private void Die()
+             {
+                 Destroy(gameObject);
+             }
             Die();
         }
     }
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+
 }
