@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 394074879}
   - component: {fileID: 394074878}
   m_Layer: 0
-  m_Name: test_background_puncat_0
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
