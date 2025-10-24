@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class EnemyBehaviourScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] private float healthPoint;
-    private float damage;
+    [SerializeField] public float healthPoint;
+    public float damage;
     void Start()
     {
 
@@ -21,7 +21,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // In main character mouvement, add a colision function to manage the damage of the ennemy
     /*
      * The function : 
-     * public void OnCollisionEnted2D(Collision2D collision){
+     * public void OnCollisionEntered2D(Collision2D collision){
      *  if(collision.collider.CompareTag("Enemy)){
      *      gameManagement.TakeDamage(0.5f);
      *  }
@@ -30,7 +30,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         healthPoint -= damage;
         if (healthPoint <= 0)
@@ -38,8 +38,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
             Die();
         }
     }
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+    public void Die()
+             {
+                 Destroy(gameObject);
+             }
+
 }
