@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class EnemyBehaviourScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] private float healthPoint;
-    private float damage;
+    [SerializeField] public float healthPoint;
+    public float damage;
     void Start()
     {
 
@@ -30,16 +30,17 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         healthPoint -= damage;
         if (healthPoint <= 0)
-        {private void Die()
-             {
-                 Destroy(gameObject);
-             }
+        {
             Die();
         }
     }
+    public void Die()
+             {
+                 Destroy(gameObject);
+             }
 
 }
