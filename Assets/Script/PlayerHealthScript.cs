@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerHealthScript : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerHealthScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"Joueur a pris {damage} dégâts. Santé: {currentHealth}");
+        Debug.Log($"Joueur a pris {damage} dï¿½gï¿½ts. Santï¿½: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -24,5 +25,6 @@ public class PlayerHealthScript : MonoBehaviour
     void Die()
     {
         Debug.Log("Le joueur est mort!");
+        Destroy(gameObject);
     }
 }
