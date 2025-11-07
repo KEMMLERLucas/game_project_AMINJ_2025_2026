@@ -1,18 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public float collisionOffset;
-    public Transform cornerNETransform;
-    public Transform cornerNWTransform;
-    public Transform cornerSETransform;
-    public Transform cornerSWTransform;
+    Transform cornerNETransform;
+    Transform cornerNWTransform;
+    Transform cornerSETransform;
+    Transform cornerSWTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        cornerNETransform = GameObject.Find("CornerNE").transform;
+        cornerNWTransform = GameObject.Find("CornerNW").transform;
+        cornerSETransform = GameObject.Find("CornerSE").transform;
+        cornerSWTransform = GameObject.Find("CornerSW").transform;
     }
 
     // Update is called once per frame
@@ -34,5 +38,13 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += Vector3.down * speed;
         }
+    }
+
+    public void InitializeCorners(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        cornerNETransform = GameObject.Find("CornerNE").transform;
+        cornerNWTransform = GameObject.Find("CornerNW").transform;
+        cornerSETransform = GameObject.Find("CornerSE").transform;
+        cornerSWTransform = GameObject.Find("CornerSW").transform;
     }
 }
