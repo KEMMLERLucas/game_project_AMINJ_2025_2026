@@ -5,6 +5,8 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private int attackDamage = 1;
+
+    [SerializeField] private LayerMask playerLayer;
     
     private float nextAttackTime = 0f;
     void Start()
@@ -22,11 +24,11 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     }
     void CheckForPlayer()
     {
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange);
-        Debug.Log("Joueurs trouvés: " + hitPlayers[0]);
+        Debug.Log("Layer: " + playerLayer);
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange, playerLayer);
+        Debug.Log("Joueurs trouvÃ©s: " + hitPlayers);
         if (hitPlayers.Length > 0)
         {
-            // Attaque le premier joueur trouvé
             Attack(hitPlayers[0].gameObject);
             nextAttackTime = Time.time + attackCooldown;
         }
