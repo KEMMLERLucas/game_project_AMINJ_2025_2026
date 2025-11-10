@@ -270,7 +270,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.016297817, y: -0.2618722}
+  m_Offset: {x: -0.016297817, y: -0.073524445}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -280,7 +280,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5325956, y: 1.0344665}
+  m_Size: {x: 1.5325956, y: 0.65777093}
   m_EdgeRadius: 0
 --- !u!1 &384659654
 GameObject:
@@ -523,7 +523,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.016297817, y: -0.2621523}
+  m_Offset: {x: -0.025, y: -0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -533,7 +533,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5325956, y: 1.0350268}
+  m_Size: {x: 1.5, y: 0.68}
   m_EdgeRadius: 0
 --- !u!1 &1108753554
 GameObject:
@@ -728,7 +728,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.016297817, y: 0.07784915}
+  m_Offset: {x: -0.016297817, y: -0.054512978}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -738,7 +738,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5325956, y: 0.92718554}
+  m_Size: {x: 1.5325956, y: 0.6624613}
   m_EdgeRadius: 0
 --- !u!1 &1583612493
 GameObject:
@@ -976,7 +976,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.016297817, y: 0.14936964}
+  m_Offset: {x: -0.016297817, y: -0.0523248}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -986,7 +986,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5325956, y: 1.0702264}
+  m_Size: {x: 1.5325956, y: 0.6668375}
   m_EdgeRadius: 0
 --- !u!1 &2143689663
 GameObject:
@@ -1034,6 +1034,10 @@ PrefabInstance:
     - target: {fileID: 2247604257271124188, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_Name
       value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413240434934345969, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: collisionOffset
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3413240434934345969, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: cornerNETransform
@@ -1089,6 +1093,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8100077389994360306, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697330418493807590, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
