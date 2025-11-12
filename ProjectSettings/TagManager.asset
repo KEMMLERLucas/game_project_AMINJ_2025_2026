@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Obstacle
   - Background
+  - DamagingObstacle
   layers:
   - Default
   - TransparentFX

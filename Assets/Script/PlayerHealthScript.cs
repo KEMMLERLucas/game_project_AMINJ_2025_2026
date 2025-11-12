@@ -14,11 +14,18 @@ public class PlayerHealthScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"Joueur a pris {damage} d�g�ts. Sant�: {currentHealth}");
+        Debug.Log($"Joueur a pris {damage} dégâts. Santé: {currentHealth}");
 
         if (currentHealth <= 0)
         {
             Die();
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.CompareTag("DamagingObstacle"))
+        {
+            TakeDamage(1);
         }
     }
 
