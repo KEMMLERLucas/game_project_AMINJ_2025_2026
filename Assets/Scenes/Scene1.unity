@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 21890995}
   m_Layer: 0
   m_Name: CornerNE
-  m_TagString: Untagged
+  m_TagString: Corner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 384659656}
   m_Layer: 0
   m_Name: CornerSW
-  m_TagString: Untagged
+  m_TagString: Corner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 1583612495}
   m_Layer: 0
   m_Name: CornerSE
-  m_TagString: Untagged
+  m_TagString: Corner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 1917798344}
   m_Layer: 0
   m_Name: CornerNW
-  m_TagString: Untagged
+  m_TagString: Corner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1036,6 +1036,10 @@ PrefabInstance:
       value: Cat
       objectReference: {fileID: 0}
     - target: {fileID: 3413240434934345969, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: force
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413240434934345969, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: collisionOffset
       value: 0
       objectReference: {fileID: 0}
@@ -1055,6 +1059,10 @@ PrefabInstance:
       propertyPath: cornerSWTransform
       value: 
       objectReference: {fileID: 384659655}
+    - target: {fileID: 5919428942786360929, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: m_CompositeOperation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8100077389994360306, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.007929921
@@ -1093,6 +1101,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8100077389994360306, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697330418493807590, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697330418493807590, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697330418493807590, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
