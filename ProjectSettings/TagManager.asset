@@ -8,6 +8,11 @@ TagManager:
   - Obstacle
   - Background
   - DamagingObstacle
+  - DoorN
+  - DoorS
+  - DoorE
+  - DoorW
+  - Corner
   layers:
   - Default
   - TransparentFX
