@@ -21,6 +21,9 @@ public class SceneChangerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // When the player is in SceneStart
+        ChangeScene("SceneStart", "DoorN", "Scene2", collision);
+
         // When the player is in Scene1
         ChangeScene("Scene1", "DoorN", "Scene2", collision);
 
@@ -30,7 +33,7 @@ public class SceneChangerScript : MonoBehaviour
         ChangeScene("Scene2", "DoorE", "Scene3a", collision);
 
         // When the player is in Scene3a
-        ChangeScene("Scene3a", "DoorE", "Scene2", collision);
+        ChangeScene("Scene3a", "DoorW", "Scene2", collision);
         ChangeScene("Scene3a", "DoorN", "Scene4", collision);
 
         // When the player is in Scene3b
@@ -59,6 +62,26 @@ public class SceneChangerScript : MonoBehaviour
         {
             SceneManager.sceneLoaded += playerMovement.InitializeCorners;
             SceneManager.LoadScene(playerDestination);
+
+            if (doorCollision == "DoorN")
+            {
+                transform.position = new Vector3(0f, -3.3f, 0f);
+            }
+
+            if (doorCollision == "DoorS")
+            {
+                transform.position = new Vector3(0f, 3.3f, 0f);
+            }
+
+            if (doorCollision == "DoorW")
+            {
+                transform.position = new Vector3(6.5f, 0f, 0f);
+            }
+
+            if (doorCollision == "DoorE")
+            {
+                transform.position = new Vector3(-6.5f, 0f, 0f);
+            }
         }
     }
 }

@@ -119,7 +119,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &5919428942786360929
 BoxCollider2D:
@@ -179,12 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12a4c39b01474276bb9f486a0fd7e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 0.04
-  collisionOffset: 1.15
-  cornerNETransform: {fileID: 0}
-  cornerNWTransform: {fileID: 0}
-  cornerSETransform: {fileID: 0}
-  cornerSWTransform: {fileID: 0}
+  speed: 0.1
+  collisionOffset: 0
 --- !u!114 &814175726039316212
 MonoBehaviour:
   m_ObjectHideFlags: 0
