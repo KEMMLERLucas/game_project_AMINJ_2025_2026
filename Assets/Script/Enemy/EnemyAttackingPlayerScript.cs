@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnemyAttackingPlayerScript : MonoBehaviour
 {
     // Attack management
+    [SerializeField] GameObject milkBottle; 
+
     [SerializeField] private int attackDamage = 1;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackCooldown = 1.5f;
@@ -36,6 +38,7 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     void Start()
     {
         targetPos = GameObject.FindWithTag("Player").transform;
+        if (milkBottle != null) milkBottle.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -58,7 +61,7 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
                 case AttackType.longRangeStun:
                     break; 
             }
-            CheckForPlayerRange();
+            
         }
     }
     void CheckForPlayerRange()
@@ -69,34 +72,39 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
             Attack(hitPlayers[0].gameObject);
             nextAttackTime = Time.time + attackCooldown;
         }
-        
+    }
+    void Attack(GameObject player)
+    {
+        PlayerHealthScript playerHealth = player.GetComponent<PlayerHealthScript>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(attackDamage);
+        }
     }
     void CheckForPlayerCloseRange()
     {
-        //Get current angle of the ennemy
-        Vector2 moveOrientation = new Vector2(
-                targetPos.position.x - gameObject.transform.position.x,
-                targetPos.position.y - gameObject.transform.position.y
-                );
-
-        lastMoveDirection = moveOrientation.normalized;
-        float angle = Mathf.Atan2(lastMoveDirection.y, lastMoveDirection.x) * Mathf.Rad2Deg;
-        
-        //Start angle of the cone
-        float startAngle = -angle / 2f;
-        float angleStep = angle / (rayCount - 1); 
-        
-        for (int i = 0; i < rayCount; i++)
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange, playerLayer);
+        if (hitPlayers.Length > 0)
         {
-            float currentAngle = startAngle + (angleStep * i);
-            Vector2 direction = Quaternion.Euler(0, 0, currentAngle) * transform.right;
-            
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange);
-            if (hit.collider != null)
-            {
-                Attack(hit.collider.gameObject);
-            }
+            Attack_CloseRange(hitPlayers[0].gameObject);
+            nextAttackTime = Time.time + attackCooldown;
         }
+    }
+
+    void Attack_CloseRange(GameObject player)
+    {
+        if (milkBottle != null) milkBottle.SetActive(true);
+        Vector3 dir = (player.transform.position - milkBottle.transform.position).normalized;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        milkBottle.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        GameManagerScript.instance.TakeDamage(attackDamage);
+        StartCoroutine(HideMilkBottleAfterDelay(0.4f));
+    }
+    System.Collections.IEnumerator HideMilkBottleAfterDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (milkBottle != null) milkBottle.SetActive(false);
     }
     void CheckForPlayerLongRangeCone()
     {
@@ -110,14 +118,8 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
             aimAngle -= angleStep;
         }*/
     }
-    void Attack(GameObject player)
-    {
-        PlayerHealthScript playerHealth = player.GetComponent<PlayerHealthScript>();
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(attackDamage);
-        }
-    }
+
+
     void OnDrawGizmosSelected()
 {
     if (!drawGizmos) return;

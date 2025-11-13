@@ -5,6 +5,7 @@ public class PlayerHealthScript : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 6;
     private int currentHealth;
+    public GameManagerScript GameManager;
 
     void Start()
     {
@@ -14,8 +15,6 @@ public class PlayerHealthScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log($"Joueur a pris {damage} dégâts. Santé: {currentHealth}");
-
         if (currentHealth <= 0)
         {
             Die();
@@ -23,9 +22,9 @@ public class PlayerHealthScript : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.CompareTag("DamagingObstacle"))
+        if (collider2D.CompareTag("EnemyAttack"))
         {
-            TakeDamage(1);
+            GameManager.TakeDamage(1);
         }
     }
 
