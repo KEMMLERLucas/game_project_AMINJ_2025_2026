@@ -7,17 +7,12 @@ public class GameManagerScript : MonoBehaviour
     public static GameManagerScript instance;
     [SerializeField] public GameObject[] HeartContainers;
 
-    void Start()
-    {
-        UpdateHeartContainers();
-        UpdateLife(); 
-    }
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -25,6 +20,11 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        UpdateHeartContainers();
+        UpdateLife();
+    }
 
     public void UpdateHeartContainers()
     {
@@ -39,31 +39,31 @@ public class GameManagerScript : MonoBehaviour
         int fullHearts = Mathf.FloorToInt(healthPoint);
         for (int i = 0; i < fullHearts; i++)
         {
-            HeartContainers[i].GetComponent<HeartContainerScript>().SetContain(1f);
+            HeartContainers[i].GetComponent<HeartContainerScript>().SetContainer(1f);
         }
 
         if (fullHearts < maxLife)
         {
             float partial = healthPoint - fullHearts;
-            HeartContainers[fullHearts].GetComponent<HeartContainerScript>().SetContain(partial);
+            HeartContainers[fullHearts].GetComponent<HeartContainerScript>().SetContainer(partial);
 
             for (int i = fullHearts + 1; i < maxLife; i++)
             {
-                HeartContainers[i].GetComponent<HeartContainerScript>().SetContain(0f);
+                HeartContainers[i].GetComponent<HeartContainerScript>().SetContainer(0f);
             }
         }
         else
         {
             for (int i = fullHearts; i < maxLife; i++)
             {
-                HeartContainers[i].GetComponent<HeartContainerScript>().SetContain(0f);
+                HeartContainers[i].GetComponent<HeartContainerScript>().SetContainer(0f);
             }
         }
     }
     public void TakeDamage(int damage)
     {
         healthPoint -= damage;
-        Debug.Log($"Joueur a pris {damage} dégâts. Santé: {healthPoint}");
+        Debug.Log($"Joueur a pris {damage} d?g?ts. Sant?: {healthPoint}");
         UpdateLife();
         if (healthPoint <= 0)
         {
@@ -75,5 +75,4 @@ public class GameManagerScript : MonoBehaviour
         Debug.Log("Le joueur est mort!");
         Destroy(gameObject);
     }
-
 }

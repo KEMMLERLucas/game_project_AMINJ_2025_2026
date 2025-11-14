@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class HeartContainerScript : MonoBehaviour
 {
-    private float contain = 0f;
+    private float container = 0f;
     public GameObject Heart;
 
-    public float GetContain() { return contain; }
+    public float GetContainer() { return container; }
 
-    public void SetContain(float value)
+    public void SetContainer(float value)
     {
-        contain = value;
+        container = value;
         UpdateLife();
     }
 
     private void UpdateLife()
     {
-        if (contain == 0)
+        if (container == 0)
         {
             Heart.SetActive(false);
         }
