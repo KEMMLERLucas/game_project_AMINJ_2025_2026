@@ -1,36 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 6;
-    private int currentHealth;
-    public GameManagerScript GameManager;
+    public List<Sprite> successiveSprites;
 
     void Start()
     {
-        currentHealth = maxHealth;
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void TakeDamage(int damage)
+    private void Update()
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-    public void OnTriggerEnter2D(Collider2D collider2D)
-    {
-        if (collider2D.CompareTag("EnemyAttack"))
-        {
-            GameManager.TakeDamage(1);
-        }
-    }
 
-    void Die()
-    {
-        Debug.Log("Le joueur est mort!");
-        Destroy(gameObject);
     }
 }
