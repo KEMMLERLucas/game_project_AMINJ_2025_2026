@@ -216,6 +216,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 0.1
   collisionOffset: 0
+  spriteFront: {fileID: -3966249644044296509, guid: ea54954c8bd654de390935bb58920de2, type: 3}
+  spriteBack: {fileID: -698604898193135729, guid: fea2f48dce2274568b388503cc6e3cdc, type: 3}
+  spriteLeft: {fileID: 8128609298288539352, guid: b2ad2997934b04195bd13013e722199d, type: 3}
+  spriteRight: {fileID: -7244738855199169454, guid: d1c3cd72918c549659b84dbcb540ac62, type: 3}
 --- !u!114 &814175726039316212
 MonoBehaviour:
   m_ObjectHideFlags: 0
