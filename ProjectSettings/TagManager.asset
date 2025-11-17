@@ -23,7 +23,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 1206100495
+    locked: 0
+  - name: UI
+    uniqueID: 3511933933
     locked: 0
   m_RenderingLayers:
   - Default

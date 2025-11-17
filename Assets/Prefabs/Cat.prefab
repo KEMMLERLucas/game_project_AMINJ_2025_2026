@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 814175726039316212}
   - component: {fileID: 7306929709595615240}
   - component: {fileID: 8892327837147357867}
+  - component: {fileID: 3223415063734629550}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Player
@@ -64,8 +65,8 @@ Transform:
   m_GameObject: {fileID: 2247604257271124188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9979, y: -4.1749, z: 0}
-  m_LocalScale: {x: 2.149847, y: 1.9815255, z: 0.3500441}
+  m_LocalPosition: {x: 5.0041, y: -4.1821, z: 0}
+  m_LocalScale: {x: 4.229212, y: 3.8980875, z: 0.6886121}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5652703918488267175}
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 1206100495
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7595986285605212588, guid: 9429393554f7ffb458c5cda91a7e3c34, type: 3}
+  m_Sprite: {fileID: -3966249644044296509, guid: ea54954c8bd654de390935bb58920de2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,7 +152,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -172,7 +173,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -190,17 +191,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 1
   m_CompositeOrder: 0
-  m_Offset: {x: 0.003458701, y: -0.000000029802322}
+  m_Offset: {x: -0.0015908927, y: -0.0142484605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5625}
+    oldSize: {x: 0.24, y: 0.3}
     newSize: {x: 0.16, y: 0.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.37103778, y: 0.49851522}
+  m_Size: {x: 0.21779701, y: 0.26582393}
   m_EdgeRadius: 0
 --- !u!114 &3413240434934345969
 MonoBehaviour:
@@ -269,6 +270,20 @@ MonoBehaviour:
   attackDownOffset: {x: 0, y: -0.2, z: 0}
   attackLeftOffset: {x: -0.2, y: 0, z: 0}
   attackRightOffset: {x: 0.2, y: 0, z: 0}
+--- !u!114 &3223415063734629550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247604257271124188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700bd9e4ec21643928d7cecf728cb68b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackDistanceScript
+  bullet: {fileID: 6303757879013401984, guid: 64613e433cf8b47aa8063b2177723209, type: 3}
+  bulletTime: 0
 --- !u!1 &2603200837081167102
 GameObject:
   m_ObjectHideFlags: 0

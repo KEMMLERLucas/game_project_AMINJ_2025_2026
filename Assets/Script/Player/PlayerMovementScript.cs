@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementScript : MonoBehaviour
 {
     public float speed;
     public float collisionOffset;
@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Make sure the Corners are here
     public void InitializeCorners(Scene scene, LoadSceneMode loadSceneMode)
     {
         cornerNETransform = GameObject.Find("CornerNE").transform;

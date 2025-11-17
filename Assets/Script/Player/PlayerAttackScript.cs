@@ -16,6 +16,7 @@ public class PlayerAttackScript : MonoBehaviour
     public Vector3 attackDownOffset = new Vector3(0, -0.2f, 0);
     public Vector3 attackLeftOffset = new Vector3(-0.2f, 0, 0);
     public Vector3 attackRightOffset = new Vector3(0.2f, 0, 0);
+
     void Start()
     {
         
@@ -29,22 +30,22 @@ public class PlayerAttackScript : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.Z))
             {
-                //Debug.Log("Touche Z relâchée - attaque vers le haut");
+                //Debug.Log("Touche Z rel?ch?e - attaque vers le haut");
                 OnAttack(Vector3.up, attackUpOffset);
             }
             else if (Input.GetKeyUp(KeyCode.S))
             {
-                //Debug.Log("Touche S relâchée - attaque vers le bas");
+                //Debug.Log("Touche S rel?ch?e - attaque vers le bas");
                 OnAttack(Vector3.down, attackDownOffset);
             }
             else if (Input.GetKeyUp(KeyCode.Q))
             {
-                //Debug.Log("Touche Q relâchée - attaque vers la gauche");
+                //Debug.Log("Touche Q rel?ch?e - attaque vers la gauche");
                 OnAttack(Vector3.left, attackLeftOffset);
             }
             else if (Input.GetKeyUp(KeyCode.D))
             {
-                //Debug.Log("Touche D relâchée - attaque vers la droite");
+                //Debug.Log("Touche D rel?ch?e - attaque vers la droite");
                 OnAttack(Vector3.right, attackRightOffset);
             }
         }
@@ -55,7 +56,7 @@ public class PlayerAttackScript : MonoBehaviour
         isAttacking = true;
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position + offset, aimRadius, enemyLayer);
         Vector3 aimPosition = transform.position + offset;
-        Debug.Log("Nombre d'ennemis détectés dans la zone d'attaque : " + hits.Length);
+        Debug.Log("Nombre d'ennemis d?tect?s dans la zone d'attaque : " + hits.Length);
         if (hits.Length > 0) {
             float closestDistance = Mathf.Infinity;
             Collider2D closestEnemy = null;
@@ -68,7 +69,7 @@ public class PlayerAttackScript : MonoBehaviour
             }
             if (closestEnemy != null) { 
                 aimPosition = closestEnemy.transform.position;
-                //Debug.Log("Ennemi le plus proche à la position : " + aimPosition);
+                //Debug.Log("Ennemi le plus proche ? la position : " + aimPosition);
             }
         }
 

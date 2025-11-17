@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class SceneChangerScript : MonoBehaviour
 {
 
-    PlayerMovement playerMovement;
+    PlayerMovementScript playerMovement;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<PlayerMovementScript>();
     }
 
     // Update is called once per frame
@@ -63,14 +63,16 @@ public class SceneChangerScript : MonoBehaviour
             SceneManager.sceneLoaded += playerMovement.InitializeCorners;
             SceneManager.LoadScene(playerDestination);
 
+
+            // New position of the player
             if (doorCollision == "DoorN")
             {
-                transform.position = new Vector3(0f, -3.3f, 0f);
+                transform.position = new Vector3(0f, -3f, 0f);
             }
 
             if (doorCollision == "DoorS")
             {
-                transform.position = new Vector3(0f, 3.3f, 0f);
+                transform.position = new Vector3(0f, 3f, 0f);
             }
 
             if (doorCollision == "DoorW")
