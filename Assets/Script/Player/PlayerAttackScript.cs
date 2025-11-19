@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class PlayerAttackScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    // Player weapon
     public GameObject Melee;
+    //Check if the player is attacking, used to add a timer
     bool isAttacking = false;
+
+    /*
+    * Values of the attack of the player. 
+    * atkDuration is the duration of the attack
+    * atkTimer is the timer that is used to show the attack
+    * aimRadius is used for the magnetisation effect
+    */
     public float atkDuration = 0.3f;
     public float atkTimer = 0f;
     public float aimRadius = 1f;
-    public LayerMask enemyLayer;
+
 
     public Vector3 attackUpOffset = new Vector3(0, 0.2f, 0);
     public Vector3 attackDownOffset = new Vector3(0, -0.2f, 0);
@@ -21,31 +29,42 @@ public class PlayerAttackScript : MonoBehaviour
     {
         
     }
+    // The enemy layer, needs to be set in the Unity Inspector
+    public LayerMask enemyLayer;
+    // Visual and practical offset for the attack, on each direction. Default offset is .5f
+    public Vector3 attackUpOffset = new Vector3(0, 0.5f, 0);
+    public Vector3 attackDownOffset = new Vector3(0, -0.5f, 0);
+    public Vector3 attackLeftOffset = new Vector3(-0.5f, 0, 0);
+    public Vector3 attackRightOffset = new Vector3(0.5f, 0, 0);
 
     void Update()
     {
+        //First, I check the melee timer to see if I can attack
         CheckMeleeTimer();
-
+        // If you are not attacking already
         if (!isAttacking)
         {
+            /* Get the input on your keyboard
+            * Note : On my keyboard, its WASD, we'll change it later
+            */
             if (Input.GetKeyUp(KeyCode.Z))
             {
-                //Debug.Log("Touche Z rel?ch?e - attaque vers le haut");
+                // Call to the OnAttack function
+
                 OnAttack(Vector3.up, attackUpOffset);
             }
             else if (Input.GetKeyUp(KeyCode.S))
             {
-                //Debug.Log("Touche S rel?ch?e - attaque vers le bas");
+
                 OnAttack(Vector3.down, attackDownOffset);
             }
             else if (Input.GetKeyUp(KeyCode.Q))
             {
-                //Debug.Log("Touche Q rel?ch?e - attaque vers la gauche");
+
                 OnAttack(Vector3.left, attackLeftOffset);
             }
             else if (Input.GetKeyUp(KeyCode.D))
             {
-                //Debug.Log("Touche D rel?ch?e - attaque vers la droite");
                 OnAttack(Vector3.right, attackRightOffset);
             }
         }
@@ -54,10 +73,17 @@ public class PlayerAttackScript : MonoBehaviour
     {
         // Finding Enemies
         isAttacking = true;
+        /*
+        * When Attacking, I get every enemy in the radius of my attack.
+        * This radius is larger than the actual size of the attackn to add a magnetic effect on the attack
+        */
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position + offset, aimRadius, enemyLayer);
         Vector3 aimPosition = transform.position + offset;
-        Debug.Log("Nombre d'ennemis d?tect?s dans la zone d'attaque : " + hits.Length);
+        Debug.Log("Number of enemies : " + hits.Length);
         if (hits.Length > 0) {
+            /* We check whick enemy is the closest of the player
+            * If there are 2 enemies, the closest one will be the one on which you'll get magnetized
+            */
             float closestDistance = Mathf.Infinity;
             Collider2D closestEnemy = null;
             foreach (var hit in hits){
@@ -68,13 +94,13 @@ public class PlayerAttackScript : MonoBehaviour
                 }
             }
             if (closestEnemy != null) { 
+                // The aimPosition is the position of the enemy
                 aimPosition = closestEnemy.transform.position;
-                //Debug.Log("Ennemi le plus proche ? la position : " + aimPosition);
             }
         }
-
+        //Show the melee animation or the melee sprite
         Melee.SetActive(true);
-
+        //Set the melee position to the aim
         Melee.transform.position = aimPosition;
         Melee.transform.localPosition = offset;
 
@@ -85,16 +111,18 @@ public class PlayerAttackScript : MonoBehaviour
         else if (direction == Vector3.left) angle = 90f;
         else if (direction == Vector3.right) angle = 90f;
 
+        //Rotate the Melee depending on the roation
         Melee.transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
     void CheckMeleeTimer()
     {
         if (isAttacking)
         {
+            //Starting the time
             atkTimer += Time.deltaTime;
             if(atkTimer > atkDuration)
             {
-                //Debug.Log("Fin de l'attaque");
+                // The attack ends, 
                 atkTimer = 0;
                 isAttacking= false;
                 Melee.SetActive(false);
