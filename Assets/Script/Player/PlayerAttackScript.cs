@@ -19,7 +19,9 @@ public class PlayerAttackScript : MonoBehaviour
     public float atkTimer = 0f;
     public float aimRadius = 1f;
 
-
+    // The enemy layer, needs to be set in the Unity Inspector
+    public LayerMask enemyLayer;
+    // Visual and practical offset for the attack, on each direction. Default offset is .5f
     public Vector3 attackUpOffset = new Vector3(0, 0.2f, 0);
     public Vector3 attackDownOffset = new Vector3(0, -0.2f, 0);
     public Vector3 attackLeftOffset = new Vector3(-0.2f, 0, 0);
@@ -29,13 +31,7 @@ public class PlayerAttackScript : MonoBehaviour
     {
         
     }
-    // The enemy layer, needs to be set in the Unity Inspector
-    public LayerMask enemyLayer;
-    // Visual and practical offset for the attack, on each direction. Default offset is .5f
-    public Vector3 attackUpOffset = new Vector3(0, 0.5f, 0);
-    public Vector3 attackDownOffset = new Vector3(0, -0.5f, 0);
-    public Vector3 attackLeftOffset = new Vector3(-0.5f, 0, 0);
-    public Vector3 attackRightOffset = new Vector3(0.5f, 0, 0);
+
 
     void Update()
     {
