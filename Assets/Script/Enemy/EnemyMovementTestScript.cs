@@ -9,7 +9,14 @@ public class EnemyMovementTestScript : MonoBehaviour
     NavMeshAgent agent;
     public LayerMask playerLayer;
     private Rigidbody2D rb;
-     public enum MovementType
+    //Settings for the wandering attribute of an ennemy
+    public float wanderSpeed = 1.5f;
+    // Time for changing direction
+    public float wanderChangeInterval = 2f;
+
+    private Vector2 wanderDirection;
+    private float wanderTimer = 0f;
+    public enum MovementType
     {
         Linear,
         LinearSlowing,
@@ -60,16 +67,41 @@ public class EnemyMovementTestScript : MonoBehaviour
         }
         else
         {
-            //Add wandering function
+            Wander();
         }
         
     }
     void CheckPlayerInRange()
     {
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, detectionRange, playerLayer);
-        if (hitPlayers.Length > 0)
+        isInRange = hitPlayers.Length > 0;
+    }
+    void Wander()
+    {
+        // Setting base time
+        wanderTimer -= Time.deltaTime;
+
+        // Selecting direction
+        if (wanderTimer <= 0f)
         {
-            isInRange = true;
+            SetRandomWanderDirection();
         }
+
+        // Moving
+        rb.linearVelocity = wanderDirection * wanderSpeed;
+    }
+    void SetRandomWanderDirection()
+    {
+        // Setting the random direction
+        wanderDirection = Random.insideUnitCircle.normalized;
+        // Setting the wanderTimer
+        wanderTimer = wanderChangeInterval;
+    }
+
+    //Used for debugging
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }
