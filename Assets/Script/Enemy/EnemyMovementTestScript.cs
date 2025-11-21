@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class EnemyMovementTestScript : MonoBehaviour
 {
     private Transform targetPos;
     public float detectionRange = 10f;
+    public GameObject exclamationMark;
+
+    public bool animationPlayed = false;
     public bool isInRange = false;
     public bool isInFight = false;
     NavMeshAgent agent;
@@ -68,13 +72,18 @@ public class EnemyMovementTestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        IEnumerator coroutine;
         CheckPlayerInRange();
         if (isInRange || isInFight)
         {
-            isInFight=true;
-            //Play animation
-            //While waiting 1sec
-            switch (movementType){
+            if (!isInFight && !animationPlayed)
+            {
+                StartCoroutine(PlayerFoundAnimation());
+                
+            }
+            if (animationPlayed)
+            {
+                switch (movementType){
             case MovementType.Linear :
                 //todo
                 break;
@@ -94,6 +103,8 @@ public class EnemyMovementTestScript : MonoBehaviour
                 break;
  
             }
+            }
+            
         }
         else
         {
@@ -127,6 +138,14 @@ public class EnemyMovementTestScript : MonoBehaviour
         
         // Setting the wanderTimer
         wanderTimer = wanderChangeInterval;
+    }
+    IEnumerator PlayerFoundAnimation()
+    {
+        exclamationMark.SetActive(true);
+        yield return new WaitForSeconds(1); // Wait for 1 second
+        Destroy(exclamationMark);
+        animationPlayed = true;
+            
     }
 
     //Used for debugging
