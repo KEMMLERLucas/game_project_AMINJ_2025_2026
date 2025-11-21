@@ -150,76 +150,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &56228376
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 595214241}
-    m_Modifications:
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3870699575903417818, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_Name
-      value: Rock_1 (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3870699575903417818, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8339795041792690287, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
---- !u!4 &56228377 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1569680804280524142, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
-  m_PrefabInstance: {fileID: 56228376}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &65948379
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65948380}
   - component: {fileID: 65948381}
+  - component: {fileID: 65948382}
   m_Layer: 0
   m_Name: CornerSW
   m_TagString: Corner
@@ -305,6 +236,22 @@ PolygonCollider2D:
       - {x: -0.7, y: -3.51}
       - {x: -0.025, y: -3.51}
   m_UseDelaunayMesh: 0
+--- !u!114 &65948382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65948379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &77939568
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 77939569}
   - component: {fileID: 77939570}
+  - component: {fileID: 77939571}
   m_Layer: 0
   m_Name: DoorE
   m_TagString: DoorE
@@ -383,6 +331,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5325956, y: 0.6668375}
   m_EdgeRadius: 0
+--- !u!114 &77939571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77939568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &93769976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5350882960324618792, guid: 3f780613213654940afd466c79e99b17, type: 3}
@@ -444,7 +408,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -505,7 +470,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -618,7 +584,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -679,7 +650,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -740,7 +712,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -806,7 +779,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1569680803956962247}
-  - {fileID: 56228377}
   - {fileID: 1569680804246682924}
   - {fileID: 1569680803073767980}
   - {fileID: 1569680803551554028}
@@ -831,6 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603796537}
   - component: {fileID: 603796538}
+  - component: {fileID: 603796539}
   m_Layer: 0
   m_Name: DoorN
   m_TagString: DoorN
@@ -899,6 +872,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 0.68}
   m_EdgeRadius: 0
+--- !u!114 &603796539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603796536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &605988480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722541694}
   - component: {fileID: 722541695}
+  - component: {fileID: 722541696}
   m_Layer: 0
   m_Name: CornerSE
   m_TagString: Corner
@@ -1149,6 +1139,22 @@ PolygonCollider2D:
       - {x: -0.7, y: -3.51}
       - {x: -0.025, y: -3.51}
   m_UseDelaunayMesh: 0
+--- !u!114 &722541696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722541693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &798192770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1205,7 +1211,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1220,6 +1227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 889276361}
   - component: {fileID: 889276362}
+  - component: {fileID: 889276363}
   m_Layer: 0
   m_Name: DoorS
   m_TagString: DoorS
@@ -1288,6 +1296,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5325956, y: 0.6624613}
   m_EdgeRadius: 0
+--- !u!114 &889276363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889276360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &919099193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919099194}
   - component: {fileID: 919099195}
+  - component: {fileID: 919099196}
   m_Layer: 0
   m_Name: CornerNW
   m_TagString: Corner
@@ -1373,6 +1398,22 @@ PolygonCollider2D:
       - {x: -0.7, y: -3.55}
       - {x: -0.025, y: -3.55}
   m_UseDelaunayMesh: 0
+--- !u!114 &919099196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919099193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &939866662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1429,7 +1470,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1650,7 +1692,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6126174067254834616, guid: c1aa393ea41ee964c8b5da21dab1d8b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1772,6 +1815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390938715}
   - component: {fileID: 1390938716}
+  - component: {fileID: 1390938717}
   m_Layer: 0
   m_Name: CornerNE
   m_TagString: Corner
@@ -1847,6 +1891,22 @@ PolygonCollider2D:
       - {x: -0.68, y: -3.55}
       - {x: -0.01, y: -3.55}
   m_UseDelaunayMesh: 0
+--- !u!114 &1390938717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390938714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1607473023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071655102}
   - component: {fileID: 2071655103}
+  - component: {fileID: 2071655104}
   m_Layer: 0
   m_Name: DoorW
   m_TagString: DoorW
@@ -2196,6 +2257,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5325956, y: 0.65777093}
   m_EdgeRadius: 0
+--- !u!114 &2071655104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071655101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &2075347273
 PrefabInstance:
   m_ObjectHideFlags: 0
