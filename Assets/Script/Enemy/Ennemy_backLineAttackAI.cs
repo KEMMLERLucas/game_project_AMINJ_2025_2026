@@ -10,7 +10,7 @@ public class Ennemy_backLineAttackAI : MonoBehaviour
     public GameObject gunDown;
     GameObject playerCharacter;
     GameObject activeGun;
-    //GameObject newActiveun;
+    GameObject newActiveGun;
     Vector2 ennemyPosition;
     Vector2 gunOrientation;
     void Start()
@@ -30,27 +30,36 @@ public class Ennemy_backLineAttackAI : MonoBehaviour
         {
             if (gunOrientation.x >= 0)
             {
-                activeGun = gunRight;
-                
+                newActiveGun = gunRight;
             }
 
             else if (gunOrientation.x < 0)
             {
-               activeGun = gunLeft;
+               newActiveGun = gunLeft;
             }
         }
         else if (Mathf.Abs(gunOrientation.x) < Mathf.Abs(gunOrientation.y))
         {
             if (gunOrientation.y >= 0)
             {
-               activeGun = gunUp;
+               newActiveGun = gunUp;
             }
 
             else if (gunOrientation.y < 0)
             {
-               activeGun = gunDown;
+               newActiveGun = gunDown;
             }
         }
-        activeGun.SetActive(true);
+
+        if (newActiveGun != null && newActiveGun != activeGun)
+        {
+            if (activeGun != null)
+            {
+                activeGun.SetActive(false);
+            }
+            activeGun = newActiveGun;
+            activeGun.SetActive(true);
+        }
+            
     }
 }

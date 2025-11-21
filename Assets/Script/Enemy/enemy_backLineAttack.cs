@@ -17,7 +17,11 @@ public class enemy_backLineAttack : MonoBehaviour
 
     public void Shoot()
     {
-        GameObject newDart = Instantiate(dart, transform.position,Quaternion.identity);
-        newDart.GetComponent<Rigidbody2D>().linearVelocity = gunDirection * dartSpeed;
+        if (gameObject.activeSelf)
+        {
+            GameObject newDart = Instantiate(dart, transform.position, Quaternion.identity);
+            newDart.GetComponent<Rigidbody2D>().linearVelocity = gunDirection * dartSpeed;
+        }
+        
     }
 }

@@ -452,6 +452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2208051100031432329, guid: 55f80797d9cf37e479b473c3f563e153, type: 3}
+      propertyPath: delayBetweenShots
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7541753982140232211, guid: 55f80797d9cf37e479b473c3f563e153, type: 3}
       propertyPath: m_Name
       value: Enemy_backLine
