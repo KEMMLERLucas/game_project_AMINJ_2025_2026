@@ -6,6 +6,7 @@ public class EnemyMovementTestScript : MonoBehaviour
     private Transform targetPos;
     public float detectionRange = 10f;
     public bool isInRange = false;
+    public bool isInFight = false;
     NavMeshAgent agent;
     public LayerMask playerLayer;
     private Rigidbody2D rb;
@@ -13,7 +14,13 @@ public class EnemyMovementTestScript : MonoBehaviour
     public float wanderSpeed = 1.5f;
     // Time for changing direction
     public float wanderChangeInterval = 2f;
-
+    //Array to manage the availables mouvements of the enemy
+    public Vector2[] availableMouvements = new Vector2[]{
+      Vector2.up, Vector2.right,Vector2.down,Vector2.left  
+    };
+    //Used to check if the ennemy is hitting a wall;
+    public bool hittingWall;
+    public Vector2 lastDirection;
     private Vector2 wanderDirection;
     private float wanderTimer = 0f;
     public enum MovementType
@@ -37,13 +44,36 @@ public class EnemyMovementTestScript : MonoBehaviour
 
 
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Manage collision, it's ugly rn but i'll redo it later
+        if(collision.gameObject.tag == "Obstacles" 
+        || collision.gameObject.tag == "Corner" 
+        || collision.gameObject.tag == "DoorN" 
+        || collision.gameObject.tag == "DoorS" 
+        || collision.gameObject.tag == "DoorE" 
+        || collision.gameObject.tag == "DoorW" )
+        {
+            Debug.Log("Collision");
+            lastDirection = wanderDirection;
+            
+            while(lastDirection == wanderDirection)
+            {
+                SetRandomWanderDirection();
+                //Debug.Log("New direction = " + wanderDirection);
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
         CheckPlayerInRange();
-        if (isInRange)
+        if (isInRange || isInFight)
         {
+            isInFight=true;
+            //Play animation
+            //While waiting 1sec
             switch (movementType){
             case MovementType.Linear :
                 //todo
@@ -93,7 +123,8 @@ public class EnemyMovementTestScript : MonoBehaviour
     void SetRandomWanderDirection()
     {
         // Setting the random direction
-        wanderDirection = Random.insideUnitCircle.normalized;
+        wanderDirection = availableMouvements[Random.Range(0,(availableMouvements.Length - 1))];
+        
         // Setting the wanderTimer
         wanderTimer = wanderChangeInterval;
     }
