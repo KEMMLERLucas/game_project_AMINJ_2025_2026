@@ -4,21 +4,55 @@ public class PlayerAttackDistanceScript : MonoBehaviour
 {
     public GameObject bullet;
     public float bulletSpeed;
-   // public SpriteRenderer currentCatSprite;
+    public float shootTimer;
+    PlayerMovementScript playerMovement;
+    bool canShoot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      //  currentCatSprite = GetComponent<SpriteRenderer>();
+        playerMovement = GetComponent<PlayerMovementScript>();
+        canShoot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && canShoot)
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().linearVelocity = Vector3.up * bulletSpeed;
+            // Instantiate a new bullet
+            GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            Vector3 bulletDirection = Vector3.zero;
+
+            // Direction of the bullet
+            switch (playerMovement.GetPlayerDirection())
+            {
+                case PlayerDirection.up:
+                    bulletDirection = Vector3.up;
+                    break;
+                case PlayerDirection.down:
+                    bulletDirection = Vector3.down;
+                    break;
+                case PlayerDirection.left:
+                    bulletDirection = Vector3.left;
+                    break;
+                case PlayerDirection.right:
+                    bulletDirection = Vector3.right;
+                    break;
+            }
+            newBullet.GetComponent<Rigidbody2D>().linearVelocity = bulletDirection * bulletSpeed;
+            canShoot = false;
+
+            // Set timer for a new bullet
+            Invoke("Shoot", shootTimer);
+        }
+    }
+
+    public void Shoot()
+    {
+        if (!canShoot)
+        {
+            canShoot = true;
         }
     }
 }

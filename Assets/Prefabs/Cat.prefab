@@ -65,8 +65,8 @@ Transform:
   m_GameObject: {fileID: 2247604257271124188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1562, y: -5.1589, z: 0}
-  m_LocalScale: {x: 1.9684114, y: 1.8142955, z: 0.32050225}
+  m_LocalPosition: {x: 4.0622, y: -5.0532, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5652703918488267175}
@@ -283,7 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackDistanceScript
   bullet: {fileID: 6303757879013401984, guid: 64613e433cf8b47aa8063b2177723209, type: 3}
-  bulletSpeed: 0
+  bulletSpeed: 3
+  shootTimer: 1
 --- !u!1 &2603200837081167102
 GameObject:
   m_ObjectHideFlags: 0

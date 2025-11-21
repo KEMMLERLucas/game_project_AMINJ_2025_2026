@@ -1393,6 +1393,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 3223415063734629550, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: bulletTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223415063734629550, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3413240434934345969, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: spriteBack
       value: 
@@ -1423,11 +1431,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5919428942786360929, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.24
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5919428942786360929, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.3
+      value: 0.9375
       objectReference: {fileID: 0}
     - target: {fileID: 8100077389994360306, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_LocalPosition.x

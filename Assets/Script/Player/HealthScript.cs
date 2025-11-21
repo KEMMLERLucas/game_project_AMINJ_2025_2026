@@ -23,7 +23,7 @@ public class HealthScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Heal();
+            Healing();
         }
     }
 
@@ -33,7 +33,7 @@ public class HealthScript : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
     }
 
-    private void Heal()
+    private void Healing()
     {
         damageTaken--;
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];

@@ -63,26 +63,21 @@ public class SceneChangerScript : MonoBehaviour
             SceneManager.sceneLoaded += playerMovement.InitializeCorners;
             SceneManager.LoadScene(playerDestination);
 
-
             // New position of the player
-            if (doorCollision == "DoorN")
+            switch (doorCollision)
             {
-                transform.position = new Vector3(0f, -3f, 0f);
-            }
-
-            if (doorCollision == "DoorS")
-            {
-                transform.position = new Vector3(0f, 3f, 0f);
-            }
-
-            if (doorCollision == "DoorW")
-            {
-                transform.position = new Vector3(6.5f, 0f, 0f);
-            }
-
-            if (doorCollision == "DoorE")
-            {
-                transform.position = new Vector3(-6.5f, 0f, 0f);
+                case "DoorN":
+                    transform.position = new Vector3(0f, -3f, 0f);
+                    break;
+                case "DoorS":
+                    transform.position = new Vector3(0f, 3f, 0f);
+                    break;
+                case "DoorW":
+                    transform.position = new Vector3(6.5f, 0f, 0f);
+                    break;
+                case "DoorE":
+                    transform.position = new Vector3(-6.5f, 0f, 0f);
+                    break;
             }
         }
     }

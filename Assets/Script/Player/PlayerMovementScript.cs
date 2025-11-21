@@ -14,6 +14,7 @@ public class PlayerMovementScript : MonoBehaviour
     Transform cornerNWTransform;
     Transform cornerSETransform;
     Transform cornerSWTransform;
+    PlayerDirection currentDirection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -33,21 +34,25 @@ public class PlayerMovementScript : MonoBehaviour
         {
             transform.position += Vector3.right * speed;
             spriteRenderer.sprite = spriteRight;
+            currentDirection = PlayerDirection.right;
         }
         if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > cornerNWTransform.position.x + collisionOffset && transform.position.x > cornerSWTransform.position.x + collisionOffset)
         {
             transform.position += Vector3.left * speed;
             spriteRenderer.sprite = spriteLeft;
+            currentDirection = PlayerDirection.left;
         }
         if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < cornerNETransform.position.y - collisionOffset && transform.position.y < cornerNWTransform.position.y - collisionOffset)
         {
             transform.position += Vector3.up * speed;
             spriteRenderer.sprite = spriteBack;
+            currentDirection = PlayerDirection.up;
         }
         if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > cornerSETransform.position.y + collisionOffset && transform.position.y > cornerSWTransform.position.y + collisionOffset)
         {
             transform.position += Vector3.down * speed;
             spriteRenderer.sprite = spriteFront;
+            currentDirection = PlayerDirection.down;
         }
     }
 
@@ -58,5 +63,10 @@ public class PlayerMovementScript : MonoBehaviour
         cornerNWTransform = GameObject.Find("CornerNW").transform;
         cornerSETransform = GameObject.Find("CornerSE").transform;
         cornerSWTransform = GameObject.Find("CornerSW").transform;
+    }
+
+    public PlayerDirection GetPlayerDirection()
+    {
+        return currentDirection;
     }
 }
