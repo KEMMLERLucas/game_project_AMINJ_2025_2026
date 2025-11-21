@@ -65,8 +65,8 @@ Transform:
   m_GameObject: {fileID: 2247604257271124188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.0041, y: -4.1821, z: 0}
-  m_LocalScale: {x: 4.229212, y: 3.8980875, z: 0.6886121}
+  m_LocalPosition: {x: 4.1562, y: -5.1589, z: 0}
+  m_LocalScale: {x: 1.9684114, y: 1.8142955, z: 0.32050225}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5652703918488267175}
@@ -191,17 +191,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 1
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0015908927, y: -0.0142484605}
+  m_Offset: {x: -0.0032025129, y: -0.04975772}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.3}
+    oldSize: {x: 0.75, y: 0.9375}
     newSize: {x: 0.16, y: 0.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.21779701, y: 0.26582393}
+  m_Size: {x: 0.6271467, y: 0.7892995}
   m_EdgeRadius: 0
 --- !u!114 &3413240434934345969
 MonoBehaviour:
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackDistanceScript
   bullet: {fileID: 6303757879013401984, guid: 64613e433cf8b47aa8063b2177723209, type: 3}
-  bulletTime: 0
+  bulletSpeed: 0
 --- !u!1 &2603200837081167102
 GameObject:
   m_ObjectHideFlags: 0
