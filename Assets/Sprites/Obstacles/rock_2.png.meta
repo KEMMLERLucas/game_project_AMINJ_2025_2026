@@ -155,37 +155,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rock_2_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 23
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8275fdf621dd0a100800000000000000
-      internalID: 117336661567690536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: rock_2_1
       rect:
         serializedVersion: 2
-        x: 2
+        x: 1
         y: 1
-        width: 29
-        height: 25
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,7 +180,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4257a323125f82b4b8a6749358e93c2f
     internalID: 0
     vertices: []
     indices: 
