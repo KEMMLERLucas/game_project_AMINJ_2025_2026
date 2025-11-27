@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0.29845, y: -0.035130024, z: 0}
   m_LocalScale: {x: 1.461, y: 1.461, z: 1.461}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2964399653146269778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8339795041792690287
@@ -154,3 +155,133 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &6403124478711808743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2964399653146269778}
+  - component: {fileID: 8163421827325794002}
+  m_Layer: 0
+  m_Name: Rock_Shadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2964399653146269778
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403124478711808743}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68446267, y: 0.68446267, z: 0.68446267}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1569680804280524142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.001, y: -0.0064}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8163421827325794002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403124478711808743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.ShadowCaster2D
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 000000000fa2e347eddb53d1
+  m_ShapePath:
+  - {x: -0.063524485, y: -0.56090355, z: 0}
+  - {x: -0.06421161, y: -0.5091076, z: 0}
+  - {x: -0.11346102, y: -0.5057831, z: 0}
+  - {x: -0.11774063, y: -0.19353735, z: 0}
+  - {x: -0.16372085, y: -0.19353735, z: 0}
+  - {x: -0.16345787, y: -0.10269666, z: 0}
+  - {x: -0.20823574, y: -0.10205412, z: 0}
+  - {x: -0.20879531, y: -0.058050394, z: 0}
+  - {x: -0.253963, y: -0.055511713, z: 0}
+  - {x: -0.2544055, y: -0.01213932, z: 0}
+  - {x: -0.34444046, y: -0.00988555, z: 0}
+  - {x: -0.3499422, y: 0.2574861, z: 0}
+  - {x: -0.3029399, y: 0.2591083, z: 0}
+  - {x: -0.2964568, y: 0.3028698, z: 0}
+  - {x: -0.25917864, y: 0.30611134, z: 0}
+  - {x: -0.25269532, y: 0.39687562, z: 0}
+  - {x: -0.20893407, y: 0.3984964, z: 0}
+  - {x: -0.20893407, y: 0.44225788, z: 0}
+  - {x: -0.119790554, y: 0.44387865, z: 0}
+  - {x: -0.118169785, y: 0.4876399, z: 0}
+  - {x: -0.02902627, y: 0.48926067, z: 0}
+  - {x: -0.02578473, y: 0.5314014, z: 0}
+  - {x: 0.011493444, y: 0.5314014, z: 0}
+  - {x: 0.0212183, y: 0.58326674, z: 0}
+  - {x: 0.24326682, y: 0.58002496, z: 0}
+  - {x: 0.24812913, y: 0.53788424, z: 0}
+  - {x: 0.3388934, y: 0.53464293, z: 0}
+  - {x: 0.34281158, y: 0.4886546, z: 0}
+  - {x: 0.42880547, y: 0.49039483, z: 0}
+  - {x: 0.4289645, y: 0.4451604, z: 0}
+  - {x: 0.47419274, y: 0.44427967, z: 0}
+  - {x: 0.47448683, y: 0.3984642, z: 0}
+  - {x: 0.5197151, y: 0.3981707, z: 0}
+  - {x: 0.5208899, y: 0.35411716, z: 0}
+  - {x: 0.5657071, y: 0.3530333, z: 0}
+  - {x: 0.56602764, y: 0.26232314, z: 0}
+  - {x: 0.6116384, y: 0.2614193, z: 0}
+  - {x: 0.61225486, y: 0.16894364, z: 0}
+  - {x: 0.6569259, y: 0.17076683, z: 0}
+  - {x: 0.65452695, y: -0.32846594, z: 0}
+  - {x: 0.6102294, y: -0.32846594, z: 0}
+  - {x: 0.610283, y: -0.46712804, z: 0}
+  - {x: 0.565722, y: -0.46681094, z: 0}
+  - {x: 0.5648879, y: -0.51302147, z: 0}
+  - {x: 0.47650862, y: -0.51399064, z: 0}
+  - {x: 0.47428477, y: -0.5595795, z: 0}
+  m_ShapePathHash: 1226883157
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 0}
+  m_ShadowShape2DProvider:
+    rid: -2
+  m_ShadowCastingSource: 1
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.15349185, y: 0.011181593, z: 0}
+      m_Extent: {x: 0.50343406, y: 0.57208514, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
