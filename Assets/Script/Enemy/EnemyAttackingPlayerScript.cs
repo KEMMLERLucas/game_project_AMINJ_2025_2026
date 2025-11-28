@@ -23,9 +23,6 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     public float coneAngle = 3f;
     public int rayCount = 5;
 
-    // Player Health
-    HealthScript playerHealth;
-
     // Others
     private LayerMask playerLayer;
     private RaycastHit2D hit;
@@ -37,7 +34,6 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     {
         targetPos = GameObject.FindWithTag("Player").transform;
         if (milkBottle != null) milkBottle.SetActive(false);
-        playerHealth = GetComponent<HealthScript>();
     }
 
     // Update is called once per frame
@@ -75,9 +71,9 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     }
     void Attack(GameObject player)
     {
-        if (playerHealth != null)
+        if (HealthScript.instance != null)
         {
-            playerHealth.TakingDamage();
+            HealthScript.instance.TakingDamage();
         }
     }
     void CheckForPlayerCloseRange()
@@ -97,7 +93,7 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         milkBottle.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        playerHealth.TakingDamage();
+        HealthScript.instance.TakingDamage();
         StartCoroutine(HideMilkBottleAfterDelay(0.4f));
     }
 
