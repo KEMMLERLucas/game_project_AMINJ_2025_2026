@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class EnemyBehaviourScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] public float healthPoint;
+    public float healthPoint;
     public float damage;
+
     void Start()
     {
 
     }
+
     // Add a function to manage the damage of the attack
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,7 +30,6 @@ public class EnemyBehaviourScript : MonoBehaviour
      */
 
 
-
     public void TakeDamage(float damage)
     {
         healthPoint -= damage;
@@ -38,9 +38,10 @@ public class EnemyBehaviourScript : MonoBehaviour
             Die();
         }
     }
+
     public void Die()
-             {
-                 Destroy(gameObject);
-             }
+    {
+        Destroy(gameObject);
+    }
 
 }

@@ -3,43 +3,43 @@ using UnityEngine;
 public class EnemyAttackingPlayerScript : MonoBehaviour
 {
     // Attack management
-    [SerializeField] GameObject milkBottle; 
+    public GameObject milkBottle; 
 
-    [SerializeField] private int attackDamage = 1;
-    [SerializeField] private float attackRange = 2f;
-    [SerializeField] private float attackCooldown = 1.5f;
-    [SerializeField] private int projectileCount = 3;
+    public int attackDamage = 1;
+    public float attackRange = 2f;
+    public float attackCooldown = 1.5f;
+    public int projectileCount = 3;
+
     // MouvementDirection
     private Transform targetPos;
     private Vector2 lastMoveDirection = Vector2.right;
     
-    [SerializeField] private Transform attackTransform;
-    // Attack Type
-    public enum AttackType
-    {
-        closeRange,
-        closeRangeCharge,
-        longRangeCone,
-        longRangeAll,
-        longRangeStun
-    }
-    [SerializeField] AttackType attackType;
+    public Transform attackTransform;
 
-    //Range management
-    [SerializeField] private float coneAngle = 3f;
-    [SerializeField] int rayCount = 5;
-    
+    // Attack Type
+    AttackType attackType;
+
+    // Range management
+    public float coneAngle = 3f;
+    public int rayCount = 5;
+
+    // Player Health
+    HealthScript playerHealth;
 
     // Others
-    [SerializeField] private LayerMask playerLayer;
+    private LayerMask playerLayer;
     private RaycastHit2D hit;
     private bool drawGizmos = false;
     private float nextAttackTime = 0f;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         targetPos = GameObject.FindWithTag("Player").transform;
         if (milkBottle != null) milkBottle.SetActive(false);
+        playerHealth = GetComponent<HealthScript>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -75,10 +75,9 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
     }
     void Attack(GameObject player)
     {
-        PlayerHealthScript playerHealth = player.GetComponent<PlayerHealthScript>();
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(attackDamage);
+            playerHealth.TakingDamage();
         }
     }
     void CheckForPlayerCloseRange()
@@ -98,9 +97,10 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         milkBottle.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        GameManagerScript.instance.TakeDamage(attackDamage);
+        playerHealth.TakingDamage();
         StartCoroutine(HideMilkBottleAfterDelay(0.4f));
     }
+
     System.Collections.IEnumerator HideMilkBottleAfterDelay(float time)
     {
         yield return new WaitForSeconds(time);
@@ -121,34 +121,34 @@ public class EnemyAttackingPlayerScript : MonoBehaviour
 
 
     void OnDrawGizmosSelected()
-{
+    {
     if (!drawGizmos) return;
 
-    switch (attackType)
-    {
-        case AttackType.closeRange:
-            Gizmos.color = Color.yellow;
-            GameObject player = GameObject.FindWithTag("Player");
-            if (player == null) return;
+        switch (attackType)
+        {
+            case AttackType.closeRange:
+                Gizmos.color = Color.yellow;
+                GameObject player = GameObject.FindWithTag("Player");
+                if (player == null) return;
 
-            Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
+                Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
 
-            float angleToPlayer = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+                float angleToPlayer = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
 
-            float startAngle = angleToPlayer - (coneAngle / 2f);
-            float endAngle = angleToPlayer + (coneAngle / 2f);
-            Vector3 leftBoundary = new Vector3(Mathf.Cos(startAngle * Mathf.Deg2Rad), Mathf.Sin(startAngle * Mathf.Deg2Rad), 0);
-            Vector3 rightBoundary = new Vector3(Mathf.Cos(endAngle * Mathf.Deg2Rad), Mathf.Sin(endAngle * Mathf.Deg2Rad), 0);
+                float startAngle = angleToPlayer - (coneAngle / 2f);
+                float endAngle = angleToPlayer + (coneAngle / 2f);
+                Vector3 leftBoundary = new Vector3(Mathf.Cos(startAngle * Mathf.Deg2Rad), Mathf.Sin(startAngle * Mathf.Deg2Rad), 0);
+                Vector3 rightBoundary = new Vector3(Mathf.Cos(endAngle * Mathf.Deg2Rad), Mathf.Sin(endAngle * Mathf.Deg2Rad), 0);
 
-            Gizmos.DrawLine(transform.position, transform.position + leftBoundary * attackRange);
-            Gizmos.DrawLine(transform.position, transform.position + rightBoundary * attackRange);
+                Gizmos.DrawLine(transform.position, transform.position + leftBoundary * attackRange);
+                Gizmos.DrawLine(transform.position, transform.position + rightBoundary * attackRange);
 
-            Gizmos.DrawWireSphere(transform.position, attackRange);
+                Gizmos.DrawWireSphere(transform.position, attackRange);
 
-            break;
+             break;
 
         
+        }
     }
-}
 
 }

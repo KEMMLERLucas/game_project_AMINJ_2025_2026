@@ -13,6 +13,7 @@ public class Ennemy_backLineAttackAI : MonoBehaviour
     GameObject newActiveGun;
     Vector2 ennemyPosition;
     Vector2 gunOrientation;
+
     void Start()
     {
         playerCharacter = GameObject.Find("Cat");
@@ -60,6 +61,5 @@ public class Ennemy_backLineAttackAI : MonoBehaviour
             activeGun = newActiveGun;
             activeGun.SetActive(true);
         }
-            
     }
 }

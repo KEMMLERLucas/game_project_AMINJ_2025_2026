@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 5919428942786360929}
   - component: {fileID: 3413240434934345969}
   - component: {fileID: 814175726039316212}
-  - component: {fileID: 7306929709595615240}
   - component: {fileID: 8892327837147357867}
   - component: {fileID: 3223415063734629550}
   m_Layer: 0
@@ -233,20 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f8fac10470e4446a2bd032f88ac52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
---- !u!114 &7306929709595615240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2247604257271124188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d416ab7419ed8904ebea8d4d33fcaef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthScript
-  maxHealth: 6
-  GameManager: {fileID: 0}
 --- !u!114 &8892327837147357867
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,16 +6,9 @@ public class EnemyMovementBehaviourScript : MonoBehaviour
     private Transform targetPos;
     NavMeshAgent agent;
     private Rigidbody2D rb;
-     public enum MovementType
-    {
-        Linear,
-        LinearSlowing,
-        PathFindingLinear,
-        PathFindingLinearSlowing
-    }
-
-    public MovementType movementType = MovementType.LinearSlowing;
+    public MovementType movementType;
     public float movementSpeed = 2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,10 +30,7 @@ public class EnemyMovementBehaviourScript : MonoBehaviour
                 break;
             case MovementType.LinearSlowing :
                 rb.linearVelocity = Vector2.zero;
-                rb.linearVelocity = new Vector2(
-                targetPos.position.x - gameObject.transform.position.x,
-                targetPos.position.y - gameObject.transform.position.y
-                ) * movementSpeed;
+                rb.linearVelocity = new Vector2(targetPos.position.x - gameObject.transform.position.x, targetPos.position.y - gameObject.transform.position.y) * movementSpeed;
                 break;
             case MovementType.PathFindingLinear : 
                 agent.SetDestination(targetPos.position);

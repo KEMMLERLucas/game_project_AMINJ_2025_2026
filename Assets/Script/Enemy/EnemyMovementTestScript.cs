@@ -14,29 +14,24 @@ public class EnemyMovementTestScript : MonoBehaviour
     NavMeshAgent agent;
     public LayerMask playerLayer;
     private Rigidbody2D rb;
+
     //Settings for the wandering attribute of an ennemy
     public float wanderSpeed = 1.5f;
+
     // Time for changing direction
     public float wanderChangeInterval = 2f;
+
     //Array to manage the availables mouvements of the enemy
-    public Vector2[] availableMouvements = new Vector2[]{
-      Vector2.up, Vector2.right,Vector2.down,Vector2.left  
-    };
+    public Vector2[] availableMouvements = new Vector2[]{Vector2.up, Vector2.right,Vector2.down,Vector2.left};
+
     //Used to check if the ennemy is hitting a wall;
     public bool hittingWall;
     public Vector2 lastDirection;
     private Vector2 wanderDirection;
     private float wanderTimer = 0f;
-    public enum MovementType
-    {
-        Linear,
-        LinearSlowing,
-        PathFindingLinear,
-        PathFindingLinearSlowing
-    }
-
-    public MovementType movementType = MovementType.LinearSlowing;
+    public MovementType movementType;
     public float movementSpeed = 2f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -83,28 +78,24 @@ public class EnemyMovementTestScript : MonoBehaviour
             }
             if (animationPlayed)
             {
-                switch (movementType){
-            case MovementType.Linear :
-                //todo
-                break;
-            case MovementType.LinearSlowing :
-                rb.linearVelocity = Vector2.zero;
-                rb.linearVelocity = new Vector2(
-                targetPos.position.x - gameObject.transform.position.x,
-                targetPos.position.y - gameObject.transform.position.y
-                ) * movementSpeed;
-                break;
-            case MovementType.PathFindingLinear : 
-                agent.SetDestination(targetPos.position);
-                //todo
-                break;
-            case MovementType.PathFindingLinearSlowing :
-                //todo
-                break;
- 
-            }
-            }
-            
+                switch (movementType)
+                {
+                    case MovementType.Linear :
+                        //todo
+                        break;
+                    case MovementType.LinearSlowing :
+                        rb.linearVelocity = Vector2.zero;
+                        rb.linearVelocity = new Vector2(targetPos.position.x - gameObject.transform.position.x,targetPos.position.y - gameObject.transform.position.y) * movementSpeed;
+                        break;
+                    case MovementType.PathFindingLinear : 
+                        agent.SetDestination(targetPos.position);
+                        //todo
+                        break;
+                    case MovementType.PathFindingLinearSlowing :
+                        //todo
+                        break;
+                }
+            } 
         }
         else
         {
@@ -112,11 +103,13 @@ public class EnemyMovementTestScript : MonoBehaviour
         }
         
     }
+
     void CheckPlayerInRange()
     {
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, detectionRange, playerLayer);
         isInRange = hitPlayers.Length > 0;
     }
+
     void Wander()
     {
         // Setting base time
@@ -131,6 +124,7 @@ public class EnemyMovementTestScript : MonoBehaviour
         // Moving
         rb.linearVelocity = wanderDirection * wanderSpeed;
     }
+
     void SetRandomWanderDirection()
     {
         // Setting the random direction
@@ -139,6 +133,7 @@ public class EnemyMovementTestScript : MonoBehaviour
         // Setting the wanderTimer
         wanderTimer = wanderChangeInterval;
     }
+
     IEnumerator PlayerFoundAnimation()
     {
         exclamationMark.SetActive(true);

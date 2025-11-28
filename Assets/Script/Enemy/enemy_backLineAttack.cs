@@ -9,6 +9,7 @@ public class enemy_backLineAttack : MonoBehaviour
     public float dartSpeed;
     public Rigidbody2D dartRigidBody;
     Vector2 gunDirection;
+
     void Start()
     {
         InvokeRepeating(nameof(Shoot), 2, delayBetweenShots);
