@@ -6,6 +6,7 @@ public class enemy_frontLineAttack : MonoBehaviour
     public GameObject ennemy;
     public GameObject slash;
     public LayerMask playerLayer;
+
     public float delayBetweenSlashes;
     public float attackRange;
 
@@ -23,11 +24,13 @@ public class enemy_frontLineAttack : MonoBehaviour
             Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange, playerLayer);
             if (hitPlayers.Length > 0)
             {
-                Debug.Log("Player detected");
-                Debug.Log("Gun direction " + gunDirection);
+                //Damaging the player
+                HealthScript.instance.TakingDamage();
+                // Showing the attack
                 GameObject newSlash = Instantiate(slash, transform.position, Quaternion.identity);
                 newSlash.transform.SetParent(transform);
                 newSlash.transform.localPosition = Vector3.zero;
+                Debug.Log("Gun orientation" + gunDirection);
                 //Manage the rotation of the attack
                 float angle = 0f;
                 // Top attack
@@ -38,7 +41,7 @@ public class enemy_frontLineAttack : MonoBehaviour
                 else if (gunDirection.y == -1.5) angle = 0f;
                 // Right attack
                 else if (gunDirection.x == 1.25) angle = 90f;
-                Debug.Log("Angle" + angle);
+                Debug.Log("Angle : " + angle);
                 //Rotate the Melee depending on the roation
                 newSlash.transform.rotation = Quaternion.Euler(0, 0, angle);
 
