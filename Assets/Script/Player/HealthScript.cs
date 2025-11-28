@@ -27,13 +27,13 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    private void TakingDamage()
+    public void TakingDamage()
     {
         damageTaken++;
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
     }
 
-    private void Healing()
+    public void Healing()
     {
         damageTaken--;
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];

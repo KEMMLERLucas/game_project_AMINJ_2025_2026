@@ -6,21 +6,18 @@ public class PlayerAttackScript : MonoBehaviour
 
     // Player weapon
     public GameObject Melee;
+
     //Check if the player is attacking, used to add a timer
     bool isAttacking = false;
 
-    /*
-    * Values of the attack of the player. 
-    * atkDuration is the duration of the attack
-    * atkTimer is the timer that is used to show the attack
-    * aimRadius is used for the magnetisation effect
-    */
+    //Values of the attack of the player. 
     public float atkDuration = 0.3f;
     public float atkTimer = 0f;
     public float aimRadius = 1f;
 
     // The enemy layer, needs to be set in the Unity Inspector
     public LayerMask enemyLayer;
+
     // Visual and practical offset for the attack, on each direction. Default offset is .5f
     public Vector3 attackUpOffset = new Vector3(0, 0.2f, 0);
     public Vector3 attackDownOffset = new Vector3(0, -0.2f, 0);
@@ -37,6 +34,7 @@ public class PlayerAttackScript : MonoBehaviour
     {
         //First, I check the melee timer to see if I can attack
         CheckMeleeTimer();
+
         // If you are not attacking already
         if (!isAttacking)
         {
@@ -76,26 +74,32 @@ public class PlayerAttackScript : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position + offset, aimRadius, enemyLayer);
         Vector3 aimPosition = transform.position + offset;
         Debug.Log("Number of enemies : " + hits.Length);
-        if (hits.Length > 0) {
+        if (hits.Length > 0)
+        {
             /* We check whick enemy is the closest of the player
             * If there are 2 enemies, the closest one will be the one on which you'll get magnetized
             */
             float closestDistance = Mathf.Infinity;
             Collider2D closestEnemy = null;
-            foreach (var hit in hits){
+            foreach (var hit in hits)
+            {
                 float dist = Vector3.Distance(transform.position, hit.transform.position);
-                if (dist < closestDistance) { 
+                if (dist < closestDistance)
+                { 
                 closestDistance = dist;
-                    closestEnemy = hit;
+                closestEnemy = hit;
                 }
             }
-            if (closestEnemy != null) { 
+            if (closestEnemy != null)
+            { 
                 // The aimPosition is the position of the enemy
                 aimPosition = closestEnemy.transform.position;
             }
         }
+
         //Show the melee animation or the melee sprite
         Melee.SetActive(true);
+
         //Set the melee position to the aim
         Melee.transform.position = aimPosition;
         Melee.transform.localPosition = offset;
