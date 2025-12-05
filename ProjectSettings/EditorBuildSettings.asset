@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ScenesFinales/MainMenuScene.unity
     guid: 54f5b0b0eb8a0144f8f3c00ee08166af
   - enabled: 1
+    path: Assets/Scenes/ScenesFinales/SceneStart.unity
+    guid: c0b3a2dfcf0454ec88acabb8e0c07155
+  - enabled: 1
     path: Assets/Scenes/ScenesFinales/Scene1.unity
     guid: a87939001ee0b784d94c0846608219af
   - enabled: 1
