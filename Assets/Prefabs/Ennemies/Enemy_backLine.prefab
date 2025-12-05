@@ -48,7 +48,7 @@ MonoBehaviour:
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
   delayBetweenShots: 5
   dartSpeed: 1
-  dartRigidBody: {fileID: -3726958703874167080, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
+  dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &3640049860616048581
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
   delayBetweenShots: 5
   dartSpeed: 1
-  dartRigidBody: {fileID: -3726958703874167080, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
+  dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &4518712466469637295
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
   delayBetweenShots: 5
   dartSpeed: 1
-  dartRigidBody: {fileID: -3726958703874167080, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
+  dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &7541753982140232211
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7541753982140232211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da8229953fc0bac46a444f2842115631, type: 3}
   m_Name: 
@@ -451,4 +451,4 @@ MonoBehaviour:
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
   delayBetweenShots: 5
   dartSpeed: 1
-  dartRigidBody: {fileID: -3726958703874167080, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
+  dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}

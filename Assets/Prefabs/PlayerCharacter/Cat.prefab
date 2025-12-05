@@ -189,7 +189,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 1
+  m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.0032025129, y: -0.04975772}
   m_SpriteTilingProperty:
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8890307fe2d3e834291f3d1e25f25c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  healthBarScript: {fileID: 0}
+  healthBarScript: {fileID: 7273140442992324237, guid: eb08496426daa174390273041cd192f9, type: 3}
 --- !u!114 &1691202304324463262
 MonoBehaviour:
   m_ObjectHideFlags: 0

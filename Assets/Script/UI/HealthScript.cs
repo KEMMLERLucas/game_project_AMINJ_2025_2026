@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
@@ -26,10 +27,10 @@ public class HealthScript : MonoBehaviour
         damageTaken++;
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
 
-        if (currentHealth[8])
-        {
-            Debug.Log("YOU LOSE");
-        }
+        //if (GetComponent<SpriteRenderer>().sprite == currentHealth[9])
+        //{
+        //    SceneManager.LoadScene("MainMenuScene");
+        //}
     }
 
     public void Healing()
