@@ -7,18 +7,20 @@ public class PlayerAttackDistanceScript : MonoBehaviour
     public float shootTimer;
     PlayerMovementScript playerMovement;
     bool canShoot;
+    bool canDistanceAttack;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerMovement = GetComponent<PlayerMovementScript>();
         canShoot = true;
+        canDistanceAttack = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && canShoot)
+        if (Input.GetKey(KeyCode.Space) && canShoot && canDistanceAttack)
         {
             // Instantiate a new bullet
             GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
@@ -53,6 +55,14 @@ public class PlayerAttackDistanceScript : MonoBehaviour
         if (!canShoot)
         {
             canShoot = true;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!canDistanceAttack && collision.gameObject.tag == "PowerUp")
+        {
+            canDistanceAttack = true;
         }
     }
 }
