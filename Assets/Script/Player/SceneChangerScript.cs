@@ -51,9 +51,6 @@ public class SceneChangerScript : MonoBehaviour
         // When the player is in Scene5b
         ChangeScene("Scene5b", "DoorS", "Scene4", collision);
 
-        // When the player is in Scene6
-        //ChangeScene("Scene6", "DoorS", "Scene5a", collision);
-        //ChangeScene("Scene6", "DoorN", "SceneBoss", collision);
        }
 
     public void ChangeScene(string playerLocation, string doorCollision, string playerDestination, Collision2D collision)

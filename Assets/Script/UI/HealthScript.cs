@@ -16,30 +16,19 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // I put random conditions to test but we have to change them
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakingDamage();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Healing();
-        }
-    }
-
     public void TakingDamage()
     {
         damageTaken++;
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
+
+        if (currentHealth[8])
+        {
+            Debug.Log("YOU LOSE");
+        }
     }
 
     public void Healing()

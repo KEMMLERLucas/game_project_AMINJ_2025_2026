@@ -160,9 +160,9 @@ GameObject:
   - component: {fileID: 893961686005658896}
   - component: {fileID: 2305508676057754427}
   - component: {fileID: 5530373185357413422}
-  - component: {fileID: 1007362655437694280}
-  - component: {fileID: 5151706527471402631}
   - component: {fileID: -5149533110653453037}
+  - component: {fileID: -558186301239970093}
+  - component: {fileID: -7436827254603612380}
   m_Layer: 7
   m_Name: Enemy_backLine
   m_TagString: Enemy
@@ -342,34 +342,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1007362655437694280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541753982140232211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176614288f45545cda556b3e4992fdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviourScript
-  healthPoint: 4
-  damage: 1
---- !u!114 &5151706527471402631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541753982140232211}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9769266be91a467e927abc3bc9ff4f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementBehaviourScript
-  movementType: 2
-  movementSpeed: 2
 --- !u!114 &-5149533110653453037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,11 +354,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b030ab14da58fa142b9df61a938ae6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerCharacter: {fileID: 2247604257271124188, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
   gunRight: {fileID: 8045755231703779993}
   gunLeft: {fileID: 3640049860616048581}
   gunUp: {fileID: 4518712466469637295}
   gunDown: {fileID: 3187068397047317255}
+--- !u!114 &-558186301239970093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541753982140232211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8229953fc0bac46a444f2842115631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementTestScript
+  detectionRange: 10
+  exclamationMark: {fileID: 0}
+  animationPlayed: 0
+  isInRange: 0
+  isInFight: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wanderSpeed: 1.5
+  wanderChangeInterval: 2
+  availableMouvements:
+  - {x: 0, y: 1}
+  - {x: 1, y: 0}
+  - {x: 0, y: -1}
+  - {x: -1, y: 0}
+  hittingWall: 0
+  lastDirection: {x: 0, y: 0}
+  movementType: 0
+  movementSpeed: 2
+--- !u!114 &-7436827254603612380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541753982140232211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176614288f45545cda556b3e4992fdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviourScript
+  maxHealthPoint: 3
+  damageReceived: 1
 --- !u!1 &8045755231703779993
 GameObject:
   m_ObjectHideFlags: 0

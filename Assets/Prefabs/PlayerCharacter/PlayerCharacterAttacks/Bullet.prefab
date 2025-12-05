@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6401868867581472358}
   m_Layer: 8
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,4 +178,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e95e1ee53ba4752b4ed963f07e4cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletScript
-  speed: 6

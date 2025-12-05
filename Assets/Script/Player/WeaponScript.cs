@@ -13,7 +13,7 @@ public class WeaponScript : MonoBehaviour
         EnemyBehaviourScript enemy = collision.GetComponent<EnemyBehaviourScript>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+            enemy.TakeDamage();
         }
         else
         {

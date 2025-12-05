@@ -13,6 +13,8 @@ TagManager:
   - DoorE
   - DoorW
   - Corner
+  - PlayerAttack
+  - HealthPickup
   - EnemyAttack
   layers:
   - Default
