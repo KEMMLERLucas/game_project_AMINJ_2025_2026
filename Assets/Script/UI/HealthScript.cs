@@ -20,6 +20,7 @@ public class HealthScript : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
+
     public void TakingDamage()
     {
         damageTaken++;
