@@ -20,7 +20,7 @@ public class PlayerAttackDistanceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && canShoot && canDistanceAttack)
+        if (Input.GetKey(KeyCode.D) && canShoot && canDistanceAttack)
         {
             // Instantiate a new bullet
             GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);

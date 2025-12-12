@@ -234,10 +234,10 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackUpOffset: {x: 0, y: 0.2, z: 0}
-  attackDownOffset: {x: 0, y: -0.2, z: 0}
-  attackLeftOffset: {x: -0.2, y: 0, z: 0}
-  attackRightOffset: {x: 0.2, y: 0, z: 0}
+  attackUpOffset: {x: 0, y: 0.4, z: 0}
+  attackDownOffset: {x: 0, y: -0.4, z: 0}
+  attackLeftOffset: {x: -0.4, y: 0, z: 0}
+  attackRightOffset: {x: 0.4, y: 0, z: 0}
   meleeAnimator: {fileID: 0}
   swingAngle: 120
 --- !u!114 &3223415063734629550
