@@ -7,6 +7,9 @@ public class PlayerAttackScript : MonoBehaviour
     // Player weapon
     public GameObject Melee;
 
+    //Player movement
+    PlayerMovementScript playerMovement;
+
     //Check if the player is attacking, used to add a timer
     bool isAttacking = false;
 
@@ -33,7 +36,7 @@ public class PlayerAttackScript : MonoBehaviour
 
     void Start()
     {
-        
+        playerMovement = GetComponent<PlayerMovementScript>();
     }
 
 
@@ -48,25 +51,23 @@ public class PlayerAttackScript : MonoBehaviour
             /* Get the input on your keyboard
             * Note : On my keyboard, its WASD, we'll change it later
             */
-            if (Input.GetKeyUp(KeyCode.Z))
+            if (Input.GetKey(KeyCode.S))
             {
-                // Call to the OnAttack function
-
-                OnAttack(Vector3.up, attackUpOffset);
+                switch (playerMovement.GetPlayerDirection())
+            {
+                case PlayerDirection.up:
+                    OnAttack(Vector3.up, attackUpOffset);
+                    break;
+                case PlayerDirection.down:
+                    OnAttack(Vector3.down, attackDownOffset);
+                    break;
+                case PlayerDirection.left:
+                    OnAttack(Vector3.left, attackLeftOffset);
+                    break;
+                case PlayerDirection.right:
+                    OnAttack(Vector3.right, attackRightOffset);
+                    break;
             }
-            else if (Input.GetKeyUp(KeyCode.S))
-            {
-
-                OnAttack(Vector3.down, attackDownOffset);
-            }
-            else if (Input.GetKeyUp(KeyCode.Q))
-            {
-
-                OnAttack(Vector3.left, attackLeftOffset);
-            }
-            else if (Input.GetKeyUp(KeyCode.D))
-            {
-                OnAttack(Vector3.right, attackRightOffset);
             }
         }
     }
@@ -118,10 +119,10 @@ public class PlayerAttackScript : MonoBehaviour
         //Rotate the Melee depending on the direction
         Melee.transform.localRotation = Quaternion.Euler(0, 0, angle);
 
-        // Play the slash animation (the animation itself draws the quarter circle)
+        // Play the slash animation
         if (meleeAnimator != null)
         {
-            meleeAnimator.Play("Slash", 0, 0f); // or SetTrigger("Attack")
+            meleeAnimator.Play("Slash", 0, 0f);
         }
     }
     void CheckMeleeTimer()
@@ -131,10 +132,6 @@ public class PlayerAttackScript : MonoBehaviour
             // Starting the time
             atkTimer += Time.deltaTime;
             float t = Mathf.Clamp01(atkTimer / atkDuration);
-
-            // Smoothly rotate the melee around the player during the attack
-            Melee.transform.localRotation = Quaternion.Slerp(startRot, endRot, t);
-
             if (atkTimer > atkDuration)
             {
                 // The attack ends
