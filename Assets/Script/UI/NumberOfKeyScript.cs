@@ -21,17 +21,17 @@ public class NumberOfKeyScript : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    /* private void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        /* if (Input.GetKeyDown(KeyCode.K))
         {
             CollectKey();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             UseKey();
-        }
-    } */
+        } */
+    }
 
     public void CollectKey()
     {
@@ -43,5 +43,10 @@ public class NumberOfKeyScript : MonoBehaviour
     {
         actualNumberOfKeys--;
         GetComponent<SpriteRenderer>().sprite = numberOfKeys[actualNumberOfKeys];
+    }
+
+    public int GetActualNumberOfKeys()
+    {
+        return actualNumberOfKeys;
     }
 }
