@@ -119,10 +119,10 @@ public class PlayerAttackScript : MonoBehaviour
         //Rotate the Melee depending on the direction
         Melee.transform.localRotation = Quaternion.Euler(0, 0, angle);
 
-        // Play the slash animation (the animation itself draws the quarter circle)
+        // Play the slash animation
         if (meleeAnimator != null)
         {
-            meleeAnimator.Play("Slash", 0, 0f); // or SetTrigger("Attack")
+            meleeAnimator.Play("Slash", 0, 0f);
         }
     }
     void CheckMeleeTimer()
@@ -132,10 +132,6 @@ public class PlayerAttackScript : MonoBehaviour
             // Starting the time
             atkTimer += Time.deltaTime;
             float t = Mathf.Clamp01(atkTimer / atkDuration);
-
-            // Smoothly rotate the melee around the player during the attack
-            Melee.transform.localRotation = Quaternion.Slerp(startRot, endRot, t);
-
             if (atkTimer > atkDuration)
             {
                 // The attack ends
