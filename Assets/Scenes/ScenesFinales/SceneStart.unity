@@ -1945,7 +1945,6 @@ MonoBehaviour:
   damageReceived: 1
   spriteTwoHP: {fileID: -3236316546915117464, guid: 255a38bbb0183b64b829d571b91c59a3, type: 3}
   spriteOneHP: {fileID: 7928655351209116113, guid: 255a38bbb0183b64b829d571b91c59a3, type: 3}
-  spriteDead: {fileID: -6987644524951729993, guid: 255a38bbb0183b64b829d571b91c59a3, type: 3}
 --- !u!61 &1095575961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2337,6 +2336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 6006800216462074113, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8100077389994360306, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2377,6 +2380,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8892327837147357867, guid: b249bddc8814b4e94b68b8015d630133, type: 3}
+      propertyPath: meleeAnimator
+      value: 
+      objectReference: {fileID: -1388718575446598072, guid: 9a7db63d91affc74388dfe6a63e8e93c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
