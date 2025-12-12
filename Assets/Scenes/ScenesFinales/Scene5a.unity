@@ -131,8 +131,8 @@ GameObject:
   - component: {fileID: 103155164}
   - component: {fileID: 103155165}
   m_Layer: 0
-  m_Name: DoorN
-  m_TagString: DoorN
+  m_Name: BossDoor
+  m_TagString: BossDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -38,7 +38,7 @@ public class SceneChangerScript : MonoBehaviour
 
         // When the player is in Scene3b
         ChangeScene("Scene3b", "DoorE", "Scene2", collision);
-
+                                                                                                                                                       
         // When the player is in Scene4
         ChangeScene("Scene4", "DoorS", "Scene3a", collision);
         ChangeScene("Scene4", "DoorW", "Scene5a", collision);
@@ -46,7 +46,12 @@ public class SceneChangerScript : MonoBehaviour
 
         // When the player is in Scene5a
         ChangeScene("Scene5a", "DoorE", "Scene4", collision);
-        ChangeScene("Scene5a", "DoorN", "SceneBoss", collision); //je change "Scene6" en "SceneBoss" car on a pas besoin de la scene6
+
+       if (NumberOfKeyScript.instance.GetActualNumberOfKeys() == 1 && collision.gameObject.tag == "BossDoor")
+        {
+            ChangeScene("Scene5a", "BossDoor", "SceneBoss", collision);
+            NumberOfKeyScript.instance.UseKey();
+        } 
 
         // When the player is in Scene5b
         ChangeScene("Scene5b", "DoorS", "Scene4", collision);
@@ -64,6 +69,9 @@ public class SceneChangerScript : MonoBehaviour
             switch (doorCollision)
             {
                 case "DoorN":
+                    transform.position = new Vector3(0f, -3f, 0f);
+                    break;
+                case "BossDoor":
                     transform.position = new Vector3(0f, -3f, 0f);
                     break;
                 case "DoorS":

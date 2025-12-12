@@ -21,12 +21,5 @@ public class KeyScript : MonoBehaviour
             NumberOfKeyScript.instance.CollectKey();
             Destroy(gameObject);
         }
-
-        if (collision.gameObject.tag == "BossDoor")
-        {
-            NumberOfKeyScript.instance.UseKey();
-
-            // Add animation or thing that shows that the door is open here
-        }
     }
 }
