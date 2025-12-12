@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 5
-  dartSpeed: 1
+  delayBetweenShots: 3
+  dartSpeed: 1.5
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &3640049860616048581
 GameObject:
@@ -95,8 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 5
-  dartSpeed: 1
+  delayBetweenShots: 3
+  dartSpeed: 1.5
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &4518712466469637295
 GameObject:
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 5
-  dartSpeed: 1
+  delayBetweenShots: 3
+  dartSpeed: 1.5
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &7541753982140232211
 GameObject:
@@ -157,12 +157,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1664597001791246008}
   - component: {fileID: 9003926241989275921}
-  - component: {fileID: 893961686005658896}
   - component: {fileID: 2305508676057754427}
   - component: {fileID: 5530373185357413422}
   - component: {fileID: -5149533110653453037}
-  - component: {fileID: -558186301239970093}
   - component: {fileID: -7436827254603612380}
+  - component: {fileID: -1732127797926861370}
   m_Layer: 7
   m_Name: Enemy_backLine
   m_TagString: Enemy
@@ -247,28 +246,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!195 &893961686005658896
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541753982140232211}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.453125
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.625
-  m_BaseOffset: 0.3125
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!61 &2305508676057754427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -358,37 +335,6 @@ MonoBehaviour:
   gunLeft: {fileID: 3640049860616048581}
   gunUp: {fileID: 4518712466469637295}
   gunDown: {fileID: 3187068397047317255}
---- !u!114 &-558186301239970093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541753982140232211}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8229953fc0bac46a444f2842115631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementTestScript
-  detectionRange: 10
-  exclamationMark: {fileID: 0}
-  animationPlayed: 0
-  isInRange: 0
-  isInFight: 0
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wanderSpeed: 1.5
-  wanderChangeInterval: 2
-  availableMouvements:
-  - {x: 0, y: 1}
-  - {x: 1, y: 0}
-  - {x: 0, y: -1}
-  - {x: -1, y: 0}
-  hittingWall: 0
-  lastDirection: {x: 0, y: 0}
-  movementType: 0
-  movementSpeed: 2
 --- !u!114 &-7436827254603612380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +349,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviourScript
   maxHealthPoint: 3
   damageReceived: 1
+--- !u!114 &-1732127797926861370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541753982140232211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02e336720cfc424986dcacff2745394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  movesVertically: 0
+  movementSpeed: 0.4
+  wallOffsetMaxY: 3.5
+  wallOffsetMinY: -3
+  wallOffsetMaxX: 6.6
+  wallOffSetMinX: -6.6
 --- !u!1 &8045755231703779993
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 5
-  dartSpeed: 1
+  delayBetweenShots: 3
+  dartSpeed: 1.5
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
