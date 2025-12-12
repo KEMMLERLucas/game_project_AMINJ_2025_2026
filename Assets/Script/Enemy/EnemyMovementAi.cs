@@ -88,8 +88,15 @@ public class EnemyMovementTestScript : MonoBehaviour
                         rb.linearVelocity = new Vector2(targetPos.position.x - gameObject.transform.position.x,targetPos.position.y - gameObject.transform.position.y) * movementSpeed;
                         break;
                     case MovementType.PathFindingLinear : 
-                        agent.SetDestination(targetPos.position);
-                        //todo
+                      
+                        if(agent.remainingDistance < agent.stoppingDistance)
+                        {
+                            agent.Stop();
+                        }
+                        else
+                        {
+                            agent.SetDestination(targetPos.position);
+                        }
                         break;
                     case MovementType.PathFindingLinearSlowing :
                         //todo

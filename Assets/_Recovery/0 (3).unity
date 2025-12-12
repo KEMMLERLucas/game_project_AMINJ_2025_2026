@@ -2016,10 +2016,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 893961686005658896, guid: 15e8cda89afe8174aa23346b95c7f31c, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1518979462023600996, guid: 15e8cda89afe8174aa23346b95c7f31c, type: 3}
       propertyPath: playerLayer.m_Bits
       value: 64
@@ -2072,17 +2068,9 @@ PrefabInstance:
       propertyPath: playerLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
-    - target: {fileID: 4577003695777263345, guid: 15e8cda89afe8174aa23346b95c7f31c, type: 3}
-      propertyPath: movementType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5185901820158282646, guid: 15e8cda89afe8174aa23346b95c7f31c, type: 3}
       propertyPath: playerLayer.m_Bits
       value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 5728180522776844697, guid: 15e8cda89afe8174aa23346b95c7f31c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6120973187266357141, guid: 15e8cda89afe8174aa23346b95c7f31c, type: 3}
       propertyPath: playerLayer.m_Bits

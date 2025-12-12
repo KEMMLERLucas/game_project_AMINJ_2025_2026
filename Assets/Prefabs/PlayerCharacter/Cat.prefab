@@ -229,8 +229,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackScript
   Melee: {fileID: 2603200837081167102}
   atkDuration: 0.3
-  atkTimer: 0
+  atkTimer: 1.5
   aimRadius: 1
+  canAttack: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128

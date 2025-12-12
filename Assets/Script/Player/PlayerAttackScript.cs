@@ -11,12 +11,15 @@ public class PlayerAttackScript : MonoBehaviour
     PlayerMovementScript playerMovement;
 
     //Check if the player is attacking, used to add a timer
-    bool isAttacking = false;
+    public bool isAttacking;
 
     //Values of the attack of the player. 
     public float atkDuration = 0.3f;
     public float atkTimer = 0f;
     public float aimRadius = 1f;
+    public float cooldownBetweenAttack=3f;
+
+    public bool canAttack;
 
     // The enemy layer, needs to be set in the Unity Inspector
     public LayerMask enemyLayer;
@@ -37,20 +40,19 @@ public class PlayerAttackScript : MonoBehaviour
     void Start()
     {
         playerMovement = GetComponent<PlayerMovementScript>();
+        canAttack=true;
+        isAttacking = false;
     }
 
 
     void Update()
     {
-        //First, I check the melee timer to see if I can attack
         CheckMeleeTimer();
-
         // If you are not attacking already
-        if (!isAttacking)
+        if (!isAttacking && canAttack)
         {
-            /* Get the input on your keyboard
-            * Note : On my keyboard, its WASD, we'll change it later
-            */
+            
+            // Get the input on your keyboard
             if (Input.GetKey(KeyCode.S))
             {
                 switch (playerMovement.GetPlayerDirection())
@@ -69,12 +71,17 @@ public class PlayerAttackScript : MonoBehaviour
                     break;
             }
             }
+            
+            canAttack = false;
+            // Set timer for a new bullet
+            Invoke("Attack", atkTimer);
         }
     }
     void OnAttack(Vector3 direction, Vector3 offset)
     {
         // Finding Enemies
         isAttacking = true;
+        canAttack = false;
         atkTimer = 0f; // reset timer for this attack
 
         /*
@@ -125,22 +132,33 @@ public class PlayerAttackScript : MonoBehaviour
             meleeAnimator.Play("Slash", 0, 0f);
         }
     }
-    void CheckMeleeTimer()
+     public void Attack()
     {
-        if (isAttacking)
-        {
-            // Starting the time
-            atkTimer += Time.deltaTime;
-            float t = Mathf.Clamp01(atkTimer / atkDuration);
-            if (atkTimer > atkDuration)
+            if (!canAttack)
             {
-                // The attack ends
-                atkTimer = 0;
-                isAttacking = false;
-                Melee.SetActive(false);
-                Melee.transform.localPosition = Vector3.zero;
+                canAttack = true;
             }
+    }
+    void CheckMeleeTimer()
+{
+    if (isAttacking)
+    {
+        atkTimer += Time.deltaTime;
+        float t = Mathf.Clamp01(atkTimer / atkDuration);
+        
+        if (atkTimer >= atkDuration)
+        {
+            // Fin attaque
+            atkTimer = 0;
+            isAttacking = false;
+            Melee.SetActive(false);
+            Melee.transform.localPosition = Vector3.zero;
+            
+            // Cooldown supplémentaire avant nouvelle attaque (optionnel)
+            Invoke("Attack", cooldownBetweenAttack);  // 0.2f par ex.
         }
     }
+}
+
 
 }
