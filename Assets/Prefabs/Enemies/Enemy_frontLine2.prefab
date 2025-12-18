@@ -585,7 +585,7 @@ MonoBehaviour:
   - {x: -1, y: 0}
   hittingWall: 0
   lastDirection: {x: 0, y: 0}
-  movementType: 0
+  movementType: 1
   movementSpeed: 1.5
 --- !u!1 &8045755231703779993
 GameObject:

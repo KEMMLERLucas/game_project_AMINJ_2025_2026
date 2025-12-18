@@ -78,6 +78,7 @@ public class EnemyMovementTestScript : MonoBehaviour
             }
             if (animationPlayed)
             {
+                //Debug.Log("Chasing");
                 switch (movementType)
                 {
                     case MovementType.Linear :
@@ -87,16 +88,10 @@ public class EnemyMovementTestScript : MonoBehaviour
                         rb.linearVelocity = Vector2.zero;
                         rb.linearVelocity = new Vector2(targetPos.position.x - gameObject.transform.position.x,targetPos.position.y - gameObject.transform.position.y) * movementSpeed;
                         break;
-                    case MovementType.PathFindingLinear : 
-                      
-                        if(agent.remainingDistance < agent.stoppingDistance)
-                        {
-                            agent.Stop();
-                        }
-                        else
-                        {
+                    case MovementType.PathFindingLinear :
+                        Debug.Log("Target pos : "+targetPos.position);
                             agent.SetDestination(targetPos.position);
-                        }
+                        
                         break;
                     case MovementType.PathFindingLinearSlowing :
                         //todo
