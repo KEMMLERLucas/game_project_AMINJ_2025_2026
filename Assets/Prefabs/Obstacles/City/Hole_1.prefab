@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1569680804280524142}
   - component: {fileID: 8339795041792690287}
-  - component: {fileID: 2484979692807176845}
   - component: {fileID: 2771905092834192253}
+  - component: {fileID: 130554632891643128}
   m_Layer: 3
-  m_Name: Rock_3
+  m_Name: Hole_1
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4377826695280923381, guid: 73ca15ab39f7a2f40baaaf6ac8f90adb, type: 3}
+  m_Sprite: {fileID: -3600671656141938555, guid: d49ac25db596d9646b568bd171c192ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,8 +92,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2484979692807176845
-BoxCollider2D:
+--- !u!114 &2771905092834192253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870699575903417818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!60 &130554632891643128
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,27 +146,20 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96875, y: 1}
+    oldSize: {x: 2.3125, y: 0.40625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.96875}
-  m_EdgeRadius: 0
---- !u!114 &2771905092834192253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3870699575903417818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  m_Points:
+    m_Paths:
+    - - {x: -0.90625, y: 0.203125}
+      - {x: -1.15625, y: 0.171875}
+      - {x: -1.15625, y: -0.015625}
+      - {x: -0.71875, y: -0.203125}
+      - {x: 0.53125, y: -0.203125}
+      - {x: 1.15625, y: -0.046875}
+      - {x: 1.15625, y: 0.140625}
+      - {x: 0.84375, y: 0.203125}
+  m_UseDelaunayMesh: 0

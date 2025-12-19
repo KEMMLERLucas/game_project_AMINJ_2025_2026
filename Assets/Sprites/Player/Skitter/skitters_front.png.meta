@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b2ad2997934b04195bd13013e722199d
+guid: 1c6db14f5d8a4eb4499c19ba9c53d975
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8128609298288539352
-    second: skitters_left_0
+      213: -3966249644044296509
+    second: skitters_front_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,12 +152,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skitters_left_0
+      name: skitters_front_0
       rect:
         serializedVersion: 2
         x: 4
         y: 1
-        width: 23
+        width: 24
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d6fc6ee61f9ec070800000000000000
-      internalID: 8128609298288539352
+      spriteID: 3ce583c76fc05f8c0800000000000000
+      internalID: -3966249644044296509
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skitters_left_0: 8128609298288539352
+      skitters_front_0: -3966249644044296509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

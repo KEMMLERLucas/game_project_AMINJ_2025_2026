@@ -119,12 +119,12 @@ SpriteRenderer:
   m_SortingLayerID: 1206100495
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3966249644044296509, guid: ea54954c8bd654de390935bb58920de2, type: 3}
+  m_Sprite: {fileID: -3966249644044296509, guid: 1c6db14f5d8a4eb4499c19ba9c53d975, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.18}
+  m_Size: {x: 0.24, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -195,8 +195,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.9375}
-    newSize: {x: 0.16, y: 0.18}
+    oldSize: {x: 0.24, y: 0.3}
+    newSize: {x: 0.24, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -228,9 +228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackScript
   Melee: {fileID: 2603200837081167102}
+  isAttacking: 0
   atkDuration: 0.3
   atkTimer: 1.5
   aimRadius: 1
+  cooldownBetweenAttack: 3
   canAttack: 0
   enemyLayer:
     serializedVersion: 2
@@ -283,10 +285,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 0.1
   collisionOffset: 0
-  spriteFront: {fileID: -3966249644044296509, guid: ea54954c8bd654de390935bb58920de2, type: 3}
-  spriteBack: {fileID: -698604898193135729, guid: fea2f48dce2274568b388503cc6e3cdc, type: 3}
-  spriteLeft: {fileID: 8128609298288539352, guid: b2ad2997934b04195bd13013e722199d, type: 3}
-  spriteRight: {fileID: -7244738855199169454, guid: d1c3cd72918c549659b84dbcb540ac62, type: 3}
+  spriteFront: {fileID: -3966249644044296509, guid: 1c6db14f5d8a4eb4499c19ba9c53d975, type: 3}
+  spriteBack: {fileID: -698604898193135729, guid: bc704dfa1cdaae04490ff0ac76aadd21, type: 3}
+  spriteLeft: {fileID: 8128609298288539352, guid: 7325cb587ad62a24cbad944787066f0a, type: 3}
+  spriteRight: {fileID: -7244738855199169454, guid: 15991e7382e9f094885b20d789aa25d7, type: 3}
 --- !u!1001 &6754923599663416882
 PrefabInstance:
   m_ObjectHideFlags: 0
