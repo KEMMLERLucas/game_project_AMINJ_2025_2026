@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 379715178}
   - component: {fileID: 379715177}
+  - component: {fileID: 379715179}
   m_Layer: 0
   m_Name: Background
   m_TagString: Background
@@ -558,6 +559,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1530379086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &379715179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379715176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1073151296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1460,7 +1477,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: a41d8690041399841b5b11ceb0cdcd02, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fa8b9d5e915de4e489d5e691f42930cf, type: 2}
 --- !u!114 &2123307655
 MonoBehaviour:
   m_ObjectHideFlags: 0

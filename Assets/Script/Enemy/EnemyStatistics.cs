@@ -4,11 +4,14 @@ public class EnemyBehaviourScript : MonoBehaviour
 {
     public float maxHealthPoint;
     public float damageReceived;
+    public SpriteRenderer sr;
     float currentHealthPoint;
 
     void Start()
     {
+        sr=gameObject.GetComponent<SpriteRenderer>();
         currentHealthPoint = maxHealthPoint;
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -18,14 +21,12 @@ public class EnemyBehaviourScript : MonoBehaviour
             TakeDamage();
         }
 
-        //if (collision.CompareTag("FriendlyAttack")
-        //{ TakeDamage(collision.GetComponent<Attack>().GetDamage); }
     }
     public void TakeDamage()
     {
         currentHealthPoint = currentHealthPoint - damageReceived;
-        Debug.Log("current health" + currentHealthPoint); 
-
+        sr.enabled = false;     
+        sr.enabled = true;  
         if (currentHealthPoint <= 0)
         {
             Die();
