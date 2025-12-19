@@ -91,7 +91,6 @@ public class EnemyMovementTestScript : MonoBehaviour
                     case MovementType.PathFindingLinear :
                         Debug.Log("Target pos : "+targetPos.position);
                             agent.SetDestination(targetPos.position);
-                        
                         break;
                     case MovementType.PathFindingLinearSlowing :
                         //todo
