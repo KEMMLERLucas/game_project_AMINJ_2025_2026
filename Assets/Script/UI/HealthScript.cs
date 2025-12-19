@@ -19,7 +19,7 @@ public class HealthScript : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        DDOLManagerScript.instance.DontDestroy(gameObject);
     }
 
     public void TakingDamage()
@@ -27,10 +27,11 @@ public class HealthScript : MonoBehaviour
         damageTaken++;
         GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
 
-        //if (GetComponent<SpriteRenderer>().sprite == currentHealth[9])
-        //{
-        //    SceneManager.LoadScene("MainMenuScene");
-        //}
+        if (GetComponent<SpriteRenderer>().sprite == currentHealth[9])
+        {
+            SceneManager.LoadScene("MainMenuScene");
+            DDOLManagerScript.instance.DestroyEverything();
+        }
     }
 
     public void Healing()

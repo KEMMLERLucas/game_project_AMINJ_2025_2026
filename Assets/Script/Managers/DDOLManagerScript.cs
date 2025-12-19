@@ -16,12 +16,13 @@ public class DDOLManagerScript : MonoBehaviour
         {
             instance = this;
         }
+
+        gameObjectsDontDestroyOnLoad = new List<GameObject>();
     }
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        gameObjectsDontDestroyOnLoad = new List<GameObject>();
     }
 
     void Update()
@@ -29,16 +30,17 @@ public class DDOLManagerScript : MonoBehaviour
         
     }
 
-    public void DontDestroy(GameObject gameObject)
+    public void DontDestroy(GameObject gameObjectToDontDestroy)
     {
-        gameObjectsDontDestroyOnLoad.Add(gameObject);
+        DontDestroyOnLoad(gameObjectToDontDestroy);
+        gameObjectsDontDestroyOnLoad.Add(gameObjectToDontDestroy);
     }
 
     public void DestroyEverything()
     {
-        foreach (GameObject gameObject in gameObjectsDontDestroyOnLoad)
+        foreach (GameObject gameObjectToDestroy in gameObjectsDontDestroyOnLoad)
         {
-            Destroy(gameObject);
+            Destroy(gameObjectToDestroy);
         }
 
         Destroy(gameObject);
