@@ -33,8 +33,7 @@ public class Enemy_backLineMovementAI : MonoBehaviour
     {
         if (movesVertically == true && transform.position.y >= wallOffsetMaxY)
         {
-            rigidbody2D.linearVelocity = new Vector2(-velocity.x, -velocity.y);
-           
+            rigidbody2D.linearVelocity = new Vector2(-velocity.x, -velocity.y);  
         }
 
         else if (movesVertically == true && transform.position.y <= wallOffsetMinY)

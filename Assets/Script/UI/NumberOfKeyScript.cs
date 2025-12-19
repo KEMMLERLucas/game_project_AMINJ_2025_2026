@@ -18,7 +18,7 @@ public class NumberOfKeyScript : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        DDOLManagerScript.instance.DontDestroy(gameObject);
     }
 
     private void Update()

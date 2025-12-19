@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6405421866459376796}
   - component: {fileID: 2297831658564042695}
   - component: {fileID: 552288515339315429}
+  - component: {fileID: 8418704149415602636}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: HealthPickup
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.06, y: -3.2, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 1206100495
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1841958811001303414, guid: 2fb51a9407fb045418a0f6049de6150f, type: 3}
+  m_Sprite: {fileID: -553072002828255882, guid: 36aa203318ef3574dbb4b44b40199131, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,7 +131,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.11, y: 0.11}
+    oldSize: {x: 0.46875, y: 0.3125}
     newSize: {x: 0.11, y: 0.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -150,3 +151,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24baa3a95273c42aab848bf8bae9e58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseScript
+  healthBar: {fileID: 8670831401748317398, guid: eb08496426daa174390273041cd192f9, type: 3}
+--- !u!95 &8418704149415602636
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525971217438426276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a8d07b10fa85104aa16010320692be8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
