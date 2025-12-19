@@ -33,10 +33,17 @@ public class HealthScript : MonoBehaviour
             DDOLManagerScript.instance.DestroyEverything();
         }
     }
-
     public void Healing()
     {
-        damageTaken--;
-        GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
+        if (currentHealth[damageTaken] != currentHealth[0])
+        {
+            damageTaken--;
+            GetComponent<SpriteRenderer>().sprite = currentHealth[damageTaken];
+        }
+    }
+
+    public bool CanHeal()
+    {
+        return currentHealth[damageTaken] != currentHealth[0];
     }
 }

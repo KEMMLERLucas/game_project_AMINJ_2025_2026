@@ -99,3 +99,5 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 ProjectSettings/EditorBuildSettings.asset
 ProjectSettings/TagManager.asset
+Assets/Script/UI/HealthScript.cs
+Assets/Script/Enemy/MouseScript.cs

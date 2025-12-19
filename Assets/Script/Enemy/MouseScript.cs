@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class MouseScript : MonoBehaviour
 {
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -17,10 +15,10 @@ public class MouseScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && HealthScript.instance.CanHeal())
         {
-            HealthScript.instance.Healing();
-            Destroy(gameObject);
+               HealthScript.instance.Healing();
+               Destroy(gameObject);
         }
     }
 }
