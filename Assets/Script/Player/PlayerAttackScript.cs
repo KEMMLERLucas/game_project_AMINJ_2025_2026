@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerAttackScript : MonoBehaviour
@@ -20,6 +19,8 @@ public class PlayerAttackScript : MonoBehaviour
     public float cooldownBetweenAttack=3f;
 
     public bool canAttack;
+    public float knockbackForce = 5f;   // à ajuster dans l’inspecteur
+
 
     // The enemy layer, needs to be set in the Unity Inspector
     public LayerMask enemyLayer;
@@ -106,9 +107,21 @@ public class PlayerAttackScript : MonoBehaviour
                 }
             }
             if (closestEnemy != null) { 
+                Debug.Log("Closest enemy :" + closestEnemy);
                 // The aimPosition is the position of the enemy
                 aimPosition = closestEnemy.transform.position;
-            }
+
+                Rigidbody2D rb = closestEnemy.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    //Direction of the player towards the enemy
+                    Vector2 knockDir = (closestEnemy.transform.position - transform.position).normalized;
+                    Debug.Log("knockback :" + knockDir);
+                    // Apply knockback
+                    //rb.linearVelocity = Vector2.zero; 
+                    rb.AddForce(knockDir.normalized * knockbackForce, ForceMode2D.Impulse);
+                }
+        }
         }
         //Show the melee animation or the melee sprite
         Melee.SetActive(true);
