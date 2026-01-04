@@ -1,25 +1,19 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class SlashScript : MonoBehaviour
 {
-    public float attackTime;
+    public float attackTime = 0.3f; 
+
+    Animator anim;
 
     void Start()
     {
-       StartCoroutine("DeleteAttackAfterDelay");
-    }
+        anim = GetComponent<Animator>();
 
-    void Update()
-    {
-        
-    }
+        if (anim != null)
+            anim.Play("Slash", 0, 0f);
 
 
-    System.Collections.IEnumerator DeleteAttackAfterDelay()
-    {
-        yield return new WaitForSeconds(attackTime);
-        Destroy(gameObject);
+        Destroy(gameObject, attackTime);
     }
 }

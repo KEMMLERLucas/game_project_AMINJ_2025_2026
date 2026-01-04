@@ -31,13 +31,13 @@ public class enemy_frontLineAttack : MonoBehaviour
                 //Manage the rotation of the attack
                 float angle = 0f;
                 // Top attack
-                if (gunDirection.y == 1.5) angle = 180f;
+                if (gunDirection.y == 1.5) angle = -90f;
                 // Left attack
-                else if (gunDirection.x == -1.25) angle = -90f;
+                else if (gunDirection.x == -1.25) angle =  0f;
                 // Down attack
-                else if (gunDirection.y == -1.5) angle = 0f;
+                else if (gunDirection.y == -1.5) angle = 90f;
                 // Right attack
-                else if (gunDirection.x == 1.25) angle = 90f;
+                else if (gunDirection.x == 1.25) angle = 180f;
                 //Rotate the Melee depending on the roation
                 newSlash.transform.rotation = Quaternion.Euler(0, 0, angle);
 
