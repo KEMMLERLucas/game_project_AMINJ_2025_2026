@@ -195,7 +195,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.3}
+    oldSize: {x: 0.75, y: 0.9375}
     newSize: {x: 0.24, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -234,6 +234,7 @@ MonoBehaviour:
   aimRadius: 1
   cooldownBetweenAttack: 3
   canAttack: 0
+  knockbackForce: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -256,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttackDistanceScript
   bullet: {fileID: 6303757879013401984, guid: 64613e433cf8b47aa8063b2177723209, type: 3}
-  bulletSpeed: 3
+  bulletSpeed: 6
   shootTimer: 1
 --- !u!114 &1039386403252678619
 MonoBehaviour:
@@ -271,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   healthBarScript: {fileID: 7273140442992324237, guid: eb08496426daa174390273041cd192f9, type: 3}
+  catAnimator: {fileID: 0}
 --- !u!114 &1691202304324463262
 MonoBehaviour:
   m_ObjectHideFlags: 0

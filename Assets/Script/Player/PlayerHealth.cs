@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public HealthScript healthBarScript;
+    
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 3
-  dartSpeed: 1.5
+  delayBetweenShots: 1
+  delayBeforeShooting: 0
+  dartSpeed: 3
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &3640049860616048581
 GameObject:
@@ -95,8 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 3
-  dartSpeed: 1.5
+  delayBetweenShots: 1
+  delayBeforeShooting: 0
+  dartSpeed: 3
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &4518712466469637295
 GameObject:
@@ -144,8 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 3
-  dartSpeed: 1.5
+  delayBetweenShots: 1
+  delayBeforeShooting: 0
+  dartSpeed: 3
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
 --- !u!1 &7541753982140232211
 GameObject:
@@ -349,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviourScript
   maxHealthPoint: 3
   damageReceived: 1
+  sr: {fileID: 0}
 --- !u!114 &-1732127797926861370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   movesVertically: 0
-  movementSpeed: 0.4
+  movementSpeed: 0.8
   wallOffsetMaxY: 3.5
   wallOffsetMinY: -3
   wallOffsetMaxX: 6.6
@@ -413,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ennemy: {fileID: 7541753982140232211}
   dart: {fileID: 6303757879013401984, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}
-  delayBetweenShots: 3
-  dartSpeed: 1.5
+  delayBetweenShots: 1
+  delayBeforeShooting: 1.5
+  dartSpeed: 3
   dartRigidBody: {fileID: -5377394373784215589, guid: 4793e0eb2b4fbd149ba5762db43507bb, type: 3}

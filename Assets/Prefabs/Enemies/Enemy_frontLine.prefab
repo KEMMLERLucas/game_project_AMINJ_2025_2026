@@ -549,8 +549,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  wanderSpeed: 1
-  wanderChangeInterval: 2
+  wanderSpeed: 3
+  wanderChangeInterval: 1
   availableMouvements:
   - {x: 0, y: 1}
   - {x: 1, y: 0}
@@ -559,7 +559,7 @@ MonoBehaviour:
   hittingWall: 0
   lastDirection: {x: 0, y: 0}
   movementType: 2
-  movementSpeed: 1
+  movementSpeed: 3
 --- !u!1 &8045755231703779993
 GameObject:
   m_ObjectHideFlags: 0

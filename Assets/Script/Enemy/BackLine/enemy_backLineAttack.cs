@@ -6,13 +6,14 @@ public class enemy_backLineAttack : MonoBehaviour
     public GameObject ennemy;
     public GameObject dart;
     public float delayBetweenShots;
+    public float delayBeforeShooting;
     public float dartSpeed;
     public Rigidbody2D dartRigidBody;
     Vector2 gunDirection;
 
     void Start()
     {
-        InvokeRepeating(nameof(Shoot), 2, delayBetweenShots);
+        InvokeRepeating(nameof(Shoot), delayBeforeShooting, delayBetweenShots);
         gunDirection = transform.position - ennemy.transform.position;
     }
 
